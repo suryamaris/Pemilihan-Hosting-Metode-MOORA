@@ -1,10 +1,10 @@
 <div class="container-fluid content-row">
 	<div class="row">
-		<div class="col-sm-12 col-lg-6">
+		<div class="col-sm-12 col-lg-5">
 			<!-- Card -->
-			<div class="card mb-3" style="max-width: 700px; height:520px;">
+			<div class="card mb-3" style="max-width: 700px; height:520px;background-color:#eeeeee">
 				<div class="row g-0" style="background-color:#eeeeee">
-					<div class="col-md-8">
+					<div class="col-md">
 						<div class="card-body">
 							<h5 class="card-header" style="background-color: #eeeeee;">Tambah Data Hosting</h5>
 							<a href="<?php echo base_url('datahosting/admin') ?>"><button class="btn btn-info">Kembali</button></a>
@@ -58,7 +58,7 @@
 											<td>Keamanan</td>
 											<td>:</td>
 											<td></td>
-											<td> <input type="text" name="Keamanan"></td>
+											<td> <input type="text" name="keamanan"></td>
 										</tr>
 										<tr>
 											<td></td>
@@ -87,14 +87,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-12 col-lg-6">
+		<div class="col-sm-12 col-lg-7">
 			<!-- Card -->
 			<div class="card mb-3" style="max-width: 700px; height : 520px;">
 				<div class="row" style="background-color:#eeeeee">
 					<div class="col-md">
 						<div class="card-body">
 							<table>
-								<br>
 								<br>
 								<br>
 								<tr>

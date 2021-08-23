@@ -22,7 +22,7 @@ class dataHosting extends CI_Controller
 		$this->load->library('pagination');
 		$this->load->model('data_model');
 		//Config Pagination
-		$config['base_url'] = 'http://localhost/SI/datahosting/admin';
+		$config['base_url'] = 'http://localhost/hosting/datahosting/admin';
 		$config['total_rows'] = $this->data_model->countAllHosting();
 		$config['per_page'] = 3;
 		//Styling
@@ -90,15 +90,29 @@ class dataHosting extends CI_Controller
 	{
 		$this->load->view('form_add');
 	}
+
+	// Edit
 	public function edit_data($id)
 	{
 		$this->load->model('data_model');
 		//ambil data dari database
 		$hosting = $this->data_model->getWhere('list', array('id' => $id));
-		//$nilai = $this->data_model->getWhere('nilai', array('id'=> $id));
+		$nilai = $this->data_model->getWhere('nilai', array('id' => $id));
+		$fitur = $this->data_model->getWhere('fitur', array('id' => $id));
 		$data = array(
-			'id' => $hosting[0]['id'], 'nama' => $hosting[0]['nama'], 'penyedia' => $hosting[0]['penyedia'], 'uptime' => $hosting[0]['uptime'], 'ssd' => $hosting[0]['ssd'], 'ram' => $hosting[0]['ram'], 'cpu' => $hosting[0]['cpu'], 'bandwidth' => $hosting[0]['bandwidth'], 'inode' => $hosting[0]['inode'], 'support' => $hosting[0]['support'], 'fitur' => $hosting[0]['fitur'], 'garansi' => $hosting[0]['garansi'], 'harga' => $hosting[0]['harga'], 'keamanan' => $hosting[0]['keamanan']
+			'id' => $hosting[0]['id'], 'nama' => $hosting[0]['nama'], 'penyedia' => $hosting[0]['penyedia'], 'uptime' => $hosting[0]['uptime'], 'ssd' => $hosting[0]['ssd'], 'ram' => $hosting[0]['ram'], 'cpu' => $hosting[0]['cpu'], 'bandwidth' => $hosting[0]['bandwidth'], 'inode' => $hosting[0]['inode'], 'support' => $hosting[0]['support'], 'fitur' => $hosting[0]['fitur'], 'garansi' => $hosting[0]['garansi'], 'harga' => $hosting[0]['harga'], 'keamanan' => $hosting[0]['keamanan'], 'jumlah' => $nilai[0]['keamanan']
 		);
+		$data += array(
+			'email' => $fitur[0]['email'],
+			'add' => $fitur[0]['add'],
+			'sub' => $fitur[0]['sub'],
+			'wordpress' => $fitur[0]['wordpress'],
+			'auto' => $fitur[0]['auto'],
+			'freessl' => $fitur[0]['freessl'],
+			'domain' => $fitur[0]['domain'],
+			'litespeed' => $fitur[0]['litespeed']
+		);
+
 		// ,'jumlah' =>$nilai[0]['keamanan']
 
 		$judul['judul'] = 'Halaman Update';
@@ -110,17 +124,21 @@ class dataHosting extends CI_Controller
 	{
 		$this->load->view('form_edit');
 		$this->load->model('data_model');
-		//Upadte data
-		$data = $this->data_model->update_data();
-		$where = array('id' => $this->input->post('id'));;
-		$res = $this->data_model->Update('list', $data, $where);
+		//Upadte Fitur
+		$dataFitur = $this->data_model->inputFitur();
+		$whereFitur = array('id' => $this->input->post('id'));;
+		$dataFitur = $this->data_model->Update('fitur', $dataFitur, $whereFitur);
 		//Update nilai
-		$dataNilai = $this->data_model->inputNilai();
+		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$whereNilai = array('id' => $this->input->post('id'),);
 		$dataNilai = $this->data_model->Update('nilai', $dataNilai, $whereNilai);
+		//Upadte data
+		$data = $this->data_model->Input();
+		$where = array('id' => $this->input->post('id'));;
+		$res = $this->data_model->Update('list', $data, $where);
 		//kembali jika sudah update
 		if ($res > 0) {
-			redirect(base_url('admin'), 'refresh');
+			redirect(base_url('datahosting/admin'), 'refresh');
 		}
 	}
 }

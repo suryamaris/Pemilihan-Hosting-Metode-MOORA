@@ -25,7 +25,7 @@
 				</td>
 				<td scope="row"><?php echo $hosting['nama']; ?></td>
 				<td scope="row"><?php echo $hosting['penyedia']; ?></td>
-				<td scope="row"><?php echo $hosting['ssd']; ?> GB</td>
+				<td scope="row"><?php echo $hosting['ssd']; ?> <?php if ($hosting['ssd'] != 'Unlimited') echo (' GB');  ?></td>
 				<td scope="row"><?php echo $hosting['ram']; ?> GB</td>
 				<td scope="row"><?php echo $hosting['cpu']; ?> core</td>
 				<td scope="row"><?php echo $hosting['uptime']; ?> %</td>
@@ -36,8 +36,13 @@
 				<td scope="row"><?php echo $hosting['fitur']; ?></td>
 				<td scope="row"><?php echo $hosting['garansi']; ?> Hari</td>
 				<td scope="row"><?php echo "Rp " . number_format($hosting['harga'], 0); ?></td>
-				<td scope="row"><a href="edit_data/<?= $hosting['id']; ?>"><button class="btn btn-info">Edit</a></button></td>
-				<td scope="row"><button class="btn btn-danger"><a href="delete_data/<?= $hosting['id']; ?>">Hapus</button></a></td>
+				<td scope="row">
+					<table>
+						<tr><a href="edit_data/<?= $hosting['id']; ?>"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
+						<tr><button class="btn btn-danger"><a href="delete_data/<?= $hosting['id']; ?>">Hapus</button></a></tr>
+					</table>
+				</td>
+
 			</tr>
 		<?php } ?>
 	</form>
