@@ -82,6 +82,7 @@ class Data_model extends CI_Model
 			'id' => $this->input->post('id'),
 			'nama' => $this->input->post('nama'),
 			'penyedia' => $this->input->post('penyedia'),
+			'jenis' => $this->input->post('jenis'),
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'),
 			'cpu' => $this->input->post('cpu'),
@@ -112,8 +113,17 @@ class Data_model extends CI_Model
 			$support = 5;
 		else
 			$support = 3;
+
+		$jenis = $this->input->post('jenis');
+		if ($jenis == 'Shared')
+			$jenis = 1;
+		elseif ($jenis == 'Semi Dedicated')
+			$jenis = 3;
+		else
+			$jenis = 5;
 		$dataNilai = array(
 			'id' => $this->input->post('id'),
+			'jenis' => $jenis,
 			'keamanan' => $this->input->post('jumlah'),
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'), 'cpu' => $this->input->post('cpu'), 'bandwidth' => $bandwith, 'inode' => $inode, 'support' => $support, 'fitur' => $fitur, 'garansi' => $this->input->post('garansi'), 'harga' => $this->input->post('harga')

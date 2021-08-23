@@ -31,6 +31,15 @@
 											<td><input type="text" name="penyedia" value="<?= $penyedia ?>"></td>
 										</tr>
 										<tr>
+											<td>Jenis</td>
+											<td>:</td>
+											<td><input type="radio" name="jenis" value="Shared" <?php if ($jenis == 'Shared') echo 'checked'; ?>> Shared
+											</td>
+											<td> <input type="radio" name="jenis" value="Semi Dedicated" <?php if ($jenis == 'Semi Dedicated') echo 'checked'; ?>> Semi Dedicated
+												<input type="radio" name="jenis" value="Dedicated" <?php if ($jenis == 'Dedicated') echo 'checked'; ?>> Dedicated
+											</td>
+										</tr>
+										<tr>
 											<td>SSD</td>
 											<td>:</td>
 											<td></td>

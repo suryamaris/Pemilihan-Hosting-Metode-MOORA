@@ -5,6 +5,7 @@
 			<th scope="col">ID</th>
 			<th scope="col">Nama</th>
 			<th scope="col">Penyedia</th>
+			<th scope="col">Jenis</th>
 			<th scope="col">ssd</th>
 			<th scope="col">ram</th>
 			<th scope="col">cpu</th>
@@ -25,6 +26,7 @@
 				</td>
 				<td scope="row"><?php echo $hosting['nama']; ?></td>
 				<td scope="row"><?php echo $hosting['penyedia']; ?></td>
+				<td scope="row"><?php echo $hosting['jenis']; ?></td>
 				<td scope="row"><?php echo $hosting['ssd']; ?> <?php if ($hosting['ssd'] != 'Unlimited') echo (' GB');  ?></td>
 				<td scope="row"><?php echo $hosting['ram']; ?> GB</td>
 				<td scope="row"><?php echo $hosting['cpu']; ?> core</td>

@@ -100,7 +100,7 @@ class dataHosting extends CI_Controller
 		$nilai = $this->data_model->getWhere('nilai', array('id' => $id));
 		$fitur = $this->data_model->getWhere('fitur', array('id' => $id));
 		$data = array(
-			'id' => $hosting[0]['id'], 'nama' => $hosting[0]['nama'], 'penyedia' => $hosting[0]['penyedia'], 'uptime' => $hosting[0]['uptime'], 'ssd' => $hosting[0]['ssd'], 'ram' => $hosting[0]['ram'], 'cpu' => $hosting[0]['cpu'], 'bandwidth' => $hosting[0]['bandwidth'], 'inode' => $hosting[0]['inode'], 'support' => $hosting[0]['support'], 'fitur' => $hosting[0]['fitur'], 'garansi' => $hosting[0]['garansi'], 'harga' => $hosting[0]['harga'], 'keamanan' => $hosting[0]['keamanan'], 'jumlah' => $nilai[0]['keamanan']
+			'id' => $hosting[0]['id'], 'nama' => $hosting[0]['nama'], 'penyedia' => $hosting[0]['penyedia'], 'jenis' => $hosting[0]['jenis'], 'uptime' => $hosting[0]['uptime'], 'ssd' => $hosting[0]['ssd'], 'ram' => $hosting[0]['ram'], 'cpu' => $hosting[0]['cpu'], 'bandwidth' => $hosting[0]['bandwidth'], 'inode' => $hosting[0]['inode'], 'support' => $hosting[0]['support'], 'fitur' => $hosting[0]['fitur'], 'garansi' => $hosting[0]['garansi'], 'harga' => $hosting[0]['harga'], 'keamanan' => $hosting[0]['keamanan'], 'jumlah' => $nilai[0]['keamanan']
 		);
 		$data += array(
 			'email' => $fitur[0]['email'],
