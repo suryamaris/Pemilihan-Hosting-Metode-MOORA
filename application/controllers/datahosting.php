@@ -126,10 +126,10 @@ class dataHosting extends CI_Controller
 		$this->load->model('data_model');
 		//Upadte Fitur
 		$dataFitur = $this->data_model->inputFitur();
+		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$whereFitur = array('id' => $this->input->post('id'));;
 		$dataFitur = $this->data_model->Update('fitur', $dataFitur, $whereFitur);
 		//Update nilai
-		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$whereNilai = array('id' => $this->input->post('id'),);
 		$dataNilai = $this->data_model->Update('nilai', $dataNilai, $whereNilai);
 		//Upadte data

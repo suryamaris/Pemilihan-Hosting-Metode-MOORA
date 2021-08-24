@@ -72,7 +72,7 @@ class Data_model extends CI_Model
 
 		$bandwith = $this->input->post('bandwidth');
 		if ($bandwith != 'Unlimited')
-			$bandwith = $bandwith . ' GB';
+			$bandwith = $bandwith;
 
 		$ssd = $this->input->post('ssd');
 		if ($ssd == '0')
@@ -105,7 +105,7 @@ class Data_model extends CI_Model
 	{
 		$ssd = $this->input->post('ssd');
 		if ($ssd == 0)
-			$ssd = 1;
+			$ssd = 10;
 		$inode = $this->input->post('inode');
 		if ($inode == 0)
 			$inode = 2000000;
