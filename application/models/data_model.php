@@ -52,15 +52,19 @@ class Data_model extends CI_Model
 			$fitur = array('wordpress' => 'Paket Wordpress');
 		if ($this->input->post('freessl') == 'ya')
 			$fitur += array('freessl' => 'Free SSL');
+		if ($this->input->post('domain') == 'ya')
+			$fitur += array('domain' => 'Free Domain');
 		if ($this->input->post('litespeed') == 'ya')
 			$fitur += array('litespeed' => 'Litespeed');
 		if ($this->input->post('auto') != 'tidak')
 			$fitur += array('auto' => 'Backup ' . $this->input->post('auto'));
-		if ($this->input->post('domain') != 'tidak')
-			$fitur += array('domain' => 'Free ' . $this->input->post('domain') . ' Domain');
-		if ($this->input->post('email') != 'tidak')
-			$fitur += array('email' => 'Free ' . $this->input->post('email') . ' Email');
-		if ($this->input->post('add') != 'tidak')
+		if ($this->input->post('email') == 'batas1')
+			$fitur += array('email' => $this->input->post('batas1') . ' Email');
+		elseif ($this->input->post('email') != 'tidak')
+			$fitur += array('email' => $this->input->post('email') . ' Email');
+		if ($this->input->post('add') == 'batas')
+			$fitur += array('add' => $this->input->post('batas') . ' Addon Domain');
+		elseif ($this->input->post('add') != 'tidak')
 			$fitur += array('add' =>  $this->input->post('add') . ' Addon Domain');
 		if ($this->input->post('sub') != 'tidak')
 			$fitur += array('sub' => $this->input->post('sub') . ' Sub Domain');
@@ -132,6 +136,7 @@ class Data_model extends CI_Model
 	}
 
 
+	// Untuk Ambil nilai dari fitur
 	public function inputFitur()
 	{
 		$nilaiFitur = 0;
@@ -166,12 +171,10 @@ class Data_model extends CI_Model
 		}
 		// Domain Gratis
 		$domain = $this->input->post('domain');
-		if ($domain == 'Unlimited') {
+		if ($domain == 'ya') {
 			$nilaiFitur += 3;
-		} elseif ($domain == 'tidak') {
-			$nilaiFitur += 0;
 		} else {
-			$nilaiFitur += 1;
+			$nilaiFitur += 0;
 		}
 		// Email Gratis
 		$email = $this->input->post('email');
@@ -181,6 +184,7 @@ class Data_model extends CI_Model
 			$nilaiFitur += 0;
 		} else {
 			$nilaiFitur += 1;
+			$email = $this->input->post('batas1');
 		}
 		// Addon Domain
 		$add = $this->input->post('add');
@@ -190,6 +194,7 @@ class Data_model extends CI_Model
 			$nilaiFitur += 0;
 		} else {
 			$nilaiFitur += 1;
+			$add = $this->input->post('batas');
 		}
 		// Sub Domain
 		$sub = $this->input->post('sub');

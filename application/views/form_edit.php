@@ -178,52 +178,73 @@
 									<td></td>
 									<td></td>
 									<td>Domain Gratis </td>
-									<td>: Terbatas <input type="text" name="domain" style="max-width: 100px;" value="<?php if ($domain != "Unlimited" && $domain != "tidak") {
-																															echo $domain;
-																														} ?>">
-										<input type="radio" name="domain" value="Unlimited" <?php if ($domain == "Unlimited") {
-																								echo "checked";
-																							} ?>> Unlimited
-										<input type="radio" name="domain" value="tidak" <?php if ($domain == "tidak") {
-																							echo "checked";
-																						} ?>> Tidak
+									<td class="form-check">
+										<input class="form-check-input" name="domain" type="checkbox" value="ya" <?php if ($domain == 'ya') echo 'checked'; ?>>
+										Domain Gratis
+									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Email</td>
-									<td>: Terbatas <input type="text" name="email" style="max-width: 100px;" value="<?php if ($email != "Unlimited" && $email != "tidak") {
-																														echo $email;
-																													} ?>">
-										<input type="radio" name="email" value="Unlimited" <?php if ($email == "Unlimited") {
-																								echo "checked";
-																							} ?>> Unlimited
-										<input type="radio" name="email" value="tidak" <?php if ($email == "tidak") {
-																							echo "checked";
-																						} ?>> Tidak
+									<td>:
+										<script type="text/javascript">
+											function tampil(x) {
+												if (x == 1)
+													document.getElementById('batas1').style.display = 'block';
+												else
+													document.getElementById('batas1').style.display = 'none';
+												return;
+											}
+										</script>
+
+										<input type="radio" name="email" onclick="tampil(1)" value="batas" <?php if ($email != "Unlimited" && $email != "tidak") {
+																												echo "checked";
+																											} ?>> Terbatas
+										<input type="text" name="batas1" id="batas1" style="max-width: 80px;" value="<?php if ($email != "Unlimited" && $email != "tidak") {
+																															echo $email;
+																														} ?>">
+										<input type="radio" name="email" onclick="tampil(0)" value="Unlimited" <?php if ($email == "Unlimited") {
+																													echo "checked";
+																												} ?>> Unlimited
+										<input type="radio" name="email" onclick="tampil(0)" value="tidak" <?php if ($email == "tidak") {
+																												echo "checked";
+																											} ?>> Tidak
+									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Addon Domain</td>
-									<td>: Terbatas <input type="text" name="add" style="max-width: 100px;" value="<?php if ($add != "Unlimited" && $add != "tidak") {
+									<td>:
+										<script type="text/javascript">
+											function text(x) {
+												if (x == 1)
+													document.getElementById('batas').style.display = 'block';
+												else
+													document.getElementById('batas').style.display = 'none';
+												return;
+											}
+										</script>
+										<input type="radio" name="add" onclick="text(1)" value="batas" <?php if ($add != "Unlimited" && $add != "tidak") {
+																											echo "checked";
+																										} ?>> Terbatas
+										<input type="text" name="batas" id="batas" style="max-width: 80px;" value="<?php if ($add != "Unlimited" && $add != "tidak") {
 																														echo $add;
 																													} ?>">
-										<input type="radio" name="add" value="Unlimited" <?php if ($add == "Unlimited") {
-																								echo "checked";
-																							} ?>> Unlimited
-										<input type="radio" name="add" value="tidak" <?php if ($add == "tidak") {
-																							echo "checked";
-																						} ?>> Tidak
+										<input type="radio" name="add" onclick="text(0)" value="Unlimited" <?php if ($add == "Unlimited") {
+																												echo "checked";
+																											} ?>> Unlimited
+										<input type="radio" name="add" onclick="text(0)" value="tidak" <?php if ($add == "tidak") {
+																											echo "checked";
+																										} ?>> Tidak
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Sub Domain</td>
-									<td>: Terbatas <input type="text" name="sub" style="max-width: 100px;" value="<?php if ($sub != "Unlimited" && $sub != "tidak") {
-																														echo $sub;
-																													} ?>">
+									<td>:
 										<input type="radio" name="sub" value="Unlimited" <?php if ($sub == "Unlimited") {
 																								echo "checked";
 																							} ?>> Unlimited

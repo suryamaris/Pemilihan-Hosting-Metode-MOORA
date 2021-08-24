@@ -40,8 +40,8 @@
 				<td scope="row"><?php echo "Rp " . number_format($hosting['harga'], 0); ?></td>
 				<td scope="row">
 					<table>
-						<tr><a href="edit_data/<?= $hosting['id']; ?>"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
-						<tr><button class="btn btn-danger"><a href="delete_data/<?= $hosting['id']; ?>">Hapus</button></a></tr>
+						<tr><a href="<?= base_url('datahosting/edit_data/') . $hosting['id']; ?>"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
+						<tr><button class="btn btn-danger"><a href="<?= base_url('datahosting/delete_data/') . $hosting['id']; ?>">Hapus</button></a></tr>
 					</table>
 				</td>
 

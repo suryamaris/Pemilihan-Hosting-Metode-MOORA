@@ -153,25 +153,50 @@
 									<td></td>
 									<td></td>
 									<td>Domain Gratis </td>
-									<td>: Terbatas <input type="text" name="domain" style="max-width: 100px;">
-										<input type="radio" name="domain" value="Unlimited"> Unlimited
-										<input type="radio" name="domain" value="tidak"> Tidak
+									<td class="form-check">
+										<input class="form-check-input" name="domain" type="checkbox" value="ya">
+										Domain Gratis
+									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Email</td>
-									<td>: Terbatas <input type="text" name="email" style="max-width: 100px;">
-										<input type="radio" name="email" value="Unlimited"> Unlimited
-										<input type="radio" name="email" value="tidak"> Tidak
+									<td>:
+										<script type="text/javascript">
+											function tampil(x) {
+												if (x == 1)
+													document.getElementById('batas1').style.display = 'block';
+												else
+													document.getElementById('batas1').style.display = 'none';
+												return;
+											}
+										</script>
+
+										<input type="radio" name="email" onclick="tampil(1)" value="batas1"> Terbatas
+										<input type="text" name="batas1" id="batas1" style="max-width: 80px;">
+										<input type="radio" name="email" onclick="tampil(0)" value="Unlimited"> Unlimited
+										<input type="radio" name="email" onclick="tampil(0)" value="tidak"> Tidak
+									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Addon Domain</td>
-									<td>: Terbatas <input type="text" name="add" style="max-width: 100px;">
-										<input type="radio" name="add" value="Unlimited"> Unlimited
-										<input type="radio" name="add" value="tidak"> Tidak
+									<td>:
+										<script type="text/javascript">
+											function text(x) {
+												if (x == 1)
+													document.getElementById('batas').style.display = 'block';
+												else
+													document.getElementById('batas').style.display = 'none';
+												return;
+											}
+										</script>
+										<input type="radio" name="add" onclick="text(1)" value="batas"> Terbatas
+										<input type="text" name="batas" id="batas" style="max-width: 80px;">
+										<input type="radio" name="add" onclick="text(0)" value="Unlimited"> Unlimited
+										<input type="radio" name="add" onclick="text(0)" value="tidak"> Tidak
 									</td>
 								</tr>
 								<tr>
