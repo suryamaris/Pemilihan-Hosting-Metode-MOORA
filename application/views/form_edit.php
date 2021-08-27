@@ -40,6 +40,16 @@
 											</td>
 										</tr>
 										<tr>
+											<td>Server</td>
+											<td>:</td>
+											<td><input type="radio" name="server" value="Indonesia" <?php if ($server == 'Indonesia') echo 'checked'; ?>> Indonesia
+											</td>
+											<td> <input type="radio" name="server" value="Singapore" <?php if ($server == 'Singapore') echo 'checked'; ?>> Singapore
+												<input type="radio" name="server" value="Eropa" <?php if ($server == 'Eropa') echo 'checked'; ?>> Eropa
+												<input type="radio" name="server" value="Bebas" <?php if ($server == 'Bebas') echo 'checked'; ?>> Bebas
+											</td>
+										</tr>
+										<tr>
 											<td>SSD</td>
 											<td>:</td>
 											<td></td>
@@ -128,6 +138,9 @@
 									<td>:<input type="radio" name="wordpress" value="ya" <?php if ($wordpress == "Wordpress") {
 																								echo "checked";
 																							} ?>> Ya
+										<input type="radio" name="wordpress" value="optimal" <?php if ($wordpress == "optimal") {
+																									echo "checked";
+																								} ?>> Optimal
 										<input type="radio" name="wordpress" value="tidak" <?php if ($wordpress == "tidak") {
 																								echo "checked";
 																							} ?>> Tidak

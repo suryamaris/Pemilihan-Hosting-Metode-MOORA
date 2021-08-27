@@ -50,6 +50,8 @@ class Data_model extends CI_Model
 		$fitur = array('0' => '');
 		if ($this->input->post('wordpress') == 'ya')
 			$fitur = array('wordpress' => 'Paket Wordpress');
+		elseif ($this->input->post('wordpress') == 'optimal')
+			$fitur = array('wordpress' => 'Wordpress Optimasi');
 		if ($this->input->post('freessl') == 'ya')
 			$fitur += array('freessl' => 'Free SSL');
 		if ($this->input->post('domain') == 'ya')
@@ -87,6 +89,7 @@ class Data_model extends CI_Model
 			'nama' => $this->input->post('nama'),
 			'penyedia' => $this->input->post('penyedia'),
 			'jenis' => $this->input->post('jenis'),
+			'server' => $this->input->post('server'),
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'),
 			'cpu' => $this->input->post('cpu'),
@@ -125,9 +128,19 @@ class Data_model extends CI_Model
 			$jenis = 3;
 		else
 			$jenis = 5;
+		$server = $this->input->post('server');
+		if ($server == 'Eropa')
+			$server = 1;
+		elseif ($server == 'Indonesia')
+			$server = 3;
+		elseif ($server == 'Singapore')
+			$server = 4;
+		else
+			$server = 5;
 		$dataNilai = array(
 			'id' => $this->input->post('id'),
 			'jenis' => $jenis,
+			'server' => $server,
 			'keamanan' => $this->input->post('jumlah'),
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'), 'cpu' => $this->input->post('cpu'), 'bandwidth' => $bandwith, 'inode' => $inode, 'support' => $support, 'fitur' => $fitur, 'garansi' => $this->input->post('garansi'), 'harga' => $this->input->post('harga')
@@ -145,6 +158,9 @@ class Data_model extends CI_Model
 		if ($wordpress == 'ya') {
 			$nilaiFitur += 1;
 			$wordpress = 'Wordpress';
+		} elseif ($wordpress == 'optimal') {
+			$nilaiFitur += 2;
+			$wordpress = 'Optimal';
 		}
 		// SSL
 		$freessl = $this->input->post('freessl');

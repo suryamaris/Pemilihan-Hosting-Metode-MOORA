@@ -1,22 +1,23 @@
-<table class="table">
+<table class="table" style="width: max-content; font-size:small;">
 	<form>
 		<!-- Heading Tabel -->
 		<tr>
-			<th scope="col">ID</th>
+			<th scope="col" style="width: 10px;">ID</th>
 			<th scope="col">Nama</th>
 			<th scope="col">Penyedia</th>
-			<th scope="col">Jenis</th>
+			<th scope="col" style="width: 50px;">Jenis</th>
+			<th scope="col">Server</th>
 			<th scope="col">ssd</th>
-			<th scope="col">ram</th>
-			<th scope="col">cpu</th>
+			<th scope="col" style="width: 30px;">ram</th>
+			<th scope="col" style="width: 30px;">cpu</th>
 			<th scope="col">Uptime</th>
-			<th scope="col">Keamanan</th>
+			<th scope="col" style="width: 150px;">Keamanan</th>
 			<th scope="col">Bandwith</th>
 			<th scope="col">Inodes</th>
-			<th scope="col">Support</th>
-			<th scope="col">Fitur</th>
-			<th scope="col">Garansi</th>
-			<th scope="col">Harga</th>
+			<th scope="col" style="width:80px;">Support</th>
+			<th scope="col" style="width: 240px;">Fitur</th>
+			<th scope="col" style="width: 20px;">Garansi</th>
+			<th scope="col" style="width: 50px;">Harga</th>
 		</tr>
 		<?php foreach ($data as $hosting) { ?>
 			<!-- Isi Tabel -->
@@ -27,6 +28,7 @@
 				<td scope="row"><?php echo $hosting['nama']; ?></td>
 				<td scope="row"><?php echo $hosting['penyedia']; ?></td>
 				<td scope="row"><?php echo $hosting['jenis']; ?></td>
+				<td scope="row"><?php echo $hosting['server']; ?></td>
 				<td scope="row"><?php echo $hosting['ssd']; ?> <?php if ($hosting['ssd'] != 'Unlimited') echo (' GB');  ?></td>
 				<td scope="row"><?php echo $hosting['ram']; ?> GB</td>
 				<td scope="row"><?php echo $hosting['cpu']; ?> core</td>
@@ -38,7 +40,7 @@
 				<td scope="row"><?php echo $hosting['fitur']; ?></td>
 				<td scope="row"><?php echo $hosting['garansi']; ?> Hari</td>
 				<td scope="row"><?php echo "Rp " . number_format($hosting['harga'], 0); ?></td>
-				<td scope="row">
+				<td scope="row" style="width: 100px;">
 					<table>
 						<tr><a href="<?= base_url('datahosting/edit_data/') . $hosting['id']; ?>"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
 						<tr><button class="btn btn-danger"><a href="<?= base_url('datahosting/delete_data/') . $hosting['id']; ?>">Hapus</button></a></tr>

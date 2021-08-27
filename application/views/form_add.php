@@ -40,6 +40,15 @@
 											</td>
 										</tr>
 										<tr>
+											<td>Server</td>
+											<td>:</td>
+											<td><input type="radio" name="server" value="Shared"> Shared
+											</td>
+											<td> <input type="radio" name="server" value="Semi Dedicated"> Semi Dedicated
+												<input type="radio" name="server" value="Dedicated"> Dedicated
+											</td>
+										</tr>
+										<tr>
 											<td>SSD</td>
 											<td>:</td>
 											<td></td>
@@ -97,6 +106,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 col-lg-7">
+			<br>
 			<!-- Card -->
 			<div class="card mb-3" style="max-width: 700px; height : 520px;">
 				<div class="row" style="background-color:#eeeeee">
@@ -105,6 +115,7 @@
 							<table>
 								<br>
 								<br>
+
 								<tr>
 									<td>Support</td>
 									<td>:</td>
@@ -121,6 +132,7 @@
 									<td>:</td>
 									<td>Wordpress </td>
 									<td>:<input type="radio" name="wordpress" value="ya"> Ya
+										<input type="radio" name="wordpress" value="optimal"> Optimal
 										<input type="radio" name="wordpress" value="tidak"> Tidak
 									</td>
 								</tr>
@@ -172,7 +184,6 @@
 												return;
 											}
 										</script>
-
 										<input type="radio" name="email" onclick="tampil(1)" value="batas1"> Terbatas
 										<input type="text" name="batas1" id="batas1" style="max-width: 80px;">
 										<input type="radio" name="email" onclick="tampil(0)" value="Unlimited"> Unlimited
@@ -203,7 +214,7 @@
 									<td></td>
 									<td></td>
 									<td>Sub Domain</td>
-									<td>: Terbatas <input type="text" name="sub" style="max-width: 100px;">
+									<td>:
 										<input type="radio" name="sub" value="Unlimited"> Unlimited
 										<input type="radio" name="sub" value="tidak"> Tidak
 									</td>
