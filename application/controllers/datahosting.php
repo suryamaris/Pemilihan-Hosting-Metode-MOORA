@@ -10,6 +10,38 @@ class dataHosting extends CI_Controller
 		$this->load->view('home');
 		$this->load->view('template/footer');
 	}
+	public function Sistem()
+	{
+
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('sistem');
+		$this->load->view('template/footer');
+	}
+	public function Proses()
+	{
+
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('proses');
+		$this->load->view('template/footer');
+	}
+	public function Help()
+	{
+
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('help');
+		$this->load->view('template/footer');
+	}
+	public function About()
+	{
+
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('about');
+		$this->load->view('template/footer');
+	}
 	public function add_data()
 	{
 		$judul['judul'] = 'Halaman Admin';

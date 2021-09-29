@@ -189,8 +189,9 @@ class Data_model extends CI_Model
 		$domain = $this->input->post('domain');
 		if ($domain == 'ya') {
 			$nilaiFitur += 3;
-		} else {
+		} elseif ($domain == null) {
 			$nilaiFitur += 0;
+			$domain = 'tidak';
 		}
 		// Email Gratis
 		$email = $this->input->post('email');

@@ -33,19 +33,20 @@
 										<tr>
 											<td>Jenis</td>
 											<td>:</td>
-											<td><input type="radio" name="jenis" value="Shared"> Shared
+											<td><input type="radio" name="jenis" value="Shared" id="Shared"> <label for="Shared">Shared</label>
 											</td>
-											<td> <input type="radio" name="jenis" value="Semi Dedicated"> Semi Dedicated
-												<input type="radio" name="jenis" value="Dedicated"> Dedicated
+											<td> <input type="radio" name="jenis" value="Semi Dedicated" id="Semi Dedicated"> <label for="Semi Dedicated">Semi Dedicated</label>
+												<input type="radio" name="jenis" value="Dedicated" id="Dedicated"> <label for="Dedicated">Dedicated</label>
 											</td>
 										</tr>
 										<tr>
 											<td>Server</td>
 											<td>:</td>
-											<td><input type="radio" name="server" value="Shared"> Shared
+											<td><input type="radio" name="server" value="Indonesia" id="Indonesia"> <label for="Indonesia">Indonesia</label>
 											</td>
-											<td> <input type="radio" name="server" value="Semi Dedicated"> Semi Dedicated
-												<input type="radio" name="server" value="Dedicated"> Dedicated
+											<td> <input type="radio" name="server" value="Singapore" id="Singapore"> <label for="Singapore">Singapore</label>
+												<input type="radio" name="server" value="Eropa" id="Eropa"> <label for="Eropa">Eropa</label>
+												<input type="radio" name="server" value="Bebas" id="Bebas"> <label for="Bebas">Bebas</label>
 											</td>
 										</tr>
 										<tr>
@@ -120,8 +121,8 @@
 									<td>Support</td>
 									<td>:</td>
 									<td></td>
-									<td><input type="radio" name="support" value="Fast Support 24/7"> Fast 24/7
-										<input type="radio" name="support" value="Slow Support 24/7">Slow
+									<td><input type="radio" name="support" value="Fast Support 24/7" id="Fast 24/7"> <label for="Fast 24/7">Fast 24/7</label>
+										<input type="radio" name="support" value="Slow Support 24/7" id="Slow"> <label for="Slow">Slow</label>
 									</td>
 								</tr>
 								<tr>
@@ -131,35 +132,35 @@
 									<td>Fitur</td>
 									<td>:</td>
 									<td>Wordpress </td>
-									<td>:<input type="radio" name="wordpress" value="ya"> Ya
-										<input type="radio" name="wordpress" value="optimal"> Optimal
-										<input type="radio" name="wordpress" value="tidak"> Tidak
+									<td>:<input type="radio" name="wordpress" value="ya" id="Ya6"> <label for="Ya6">Ya</label>
+										<input type="radio" name="wordpress" value="optimal" id="Optimal6"> <label for="Optimal6">Optimal</label>
+										<input type="radio" name="wordpress" value="tidak" id="Tidak6"> <label for="Tidak6">Tidak</label>
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Free SSL </td>
-									<td>:<input type="radio" name="freessl" value="ya"> Ya
-										<input type="radio" name="fressl" value="tidak"> Tidak
+									<td>:<input type="radio" name="freessl" value="ya" id="Ya5"> <label for="Ya5">Ya</label>
+										<input type="radio" name="freessl" value="tidak" id="Tidak5"> <label for="Tidak5">Tidak</label>
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Litespeed </td>
-									<td>:<input type="radio" name="litespeed" value="ya"> Ya
-										<input type="radio" name="litespeed" value="tidak"> Tidak
+									<td>:<input type="radio" name="litespeed" value="ya" id="Y4a"> <label for="Ya4">Ya</label>
+										<input type="radio" name="litespeed" value="tidak" id="Tidak4"> <label for="Tidak4">Tidak</label>
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
 									<td>Auto Backup & Restore </td>
-									<td>:<input type="radio" name="auto" value="Harian"> Harian
-										<input type="radio" name="auto" value="Mingguan"> Mingguan
-										<input type="radio" name="auto" value="Bulanan"> Bulanan
-										<input type="radio" name="auto" value="tidak"> Tidak
+									<td>:<input type="radio" name="auto" value="Harian" id="Harian3"> <label for="Harian3">Harian</label>
+										<input type="radio" name="auto" value="Mingguan" id="Mingguan3"> <label for="Mingguan3">Mingguan</label>
+										<input type="radio" name="auto" value="Bulanan" id="Bulanan3"> <label for="Bulanan3">Bulanan</label>
+										<input type="radio" name="auto" value="tidak" id="Tidak3"> <label for="Tidak3">Tidak</label>
 								</tr>
 								<tr>
 									<td></td>
@@ -184,10 +185,10 @@
 												return;
 											}
 										</script>
-										<input type="radio" name="email" onclick="tampil(1)" value="batas1"> Terbatas
+										<input type="radio" name="email" onclick="tampil(1)" value="batas1" id="Terbatas2"> <label for="Terbatas2">Terbatas</label>
 										<input type="text" name="batas1" id="batas1" style="max-width: 80px;">
-										<input type="radio" name="email" onclick="tampil(0)" value="Unlimited"> Unlimited
-										<input type="radio" name="email" onclick="tampil(0)" value="tidak"> Tidak
+										<input type="radio" name="email" onclick="tampil(0)" value="Unlimited" id="Unlimited2"> <label for="Unlimited2">Unlimited</label>
+										<input type="radio" name="email" onclick="tampil(0)" value="tidak" id="Tidak2"> <label for="Tidak2">Tidak</label>
 									</td>
 								</tr>
 								<tr>
@@ -204,10 +205,10 @@
 												return;
 											}
 										</script>
-										<input type="radio" name="add" onclick="text(1)" value="batas"> Terbatas
+										<input type="radio" name="add" onclick="text(1)" value="batas" id="Terbatas1"> <label for="Terbatas1">Terbatas</label>
 										<input type="text" name="batas" id="batas" style="max-width: 80px;">
-										<input type="radio" name="add" onclick="text(0)" value="Unlimited"> Unlimited
-										<input type="radio" name="add" onclick="text(0)" value="tidak"> Tidak
+										<input type="radio" name="add" onclick="text(0)" value="Unlimited" id="Unlimited1"> <label for="Unlimited1">Unlimited</label>
+										<input type="radio" name="add" onclick="text(0)" value="tidak" id="Tidak1"> <label for="Tidak1">Tidak</label>
 									</td>
 								</tr>
 								<tr>
@@ -215,8 +216,8 @@
 									<td></td>
 									<td>Sub Domain</td>
 									<td>:
-										<input type="radio" name="sub" value="Unlimited"> Unlimited
-										<input type="radio" name="sub" value="tidak"> Tidak
+										<input type="radio" name="sub" value="Unlimited" id="Unlimited"> <label for="Unlimited">Unlimited</label>
+										<input type="radio" name="sub" value="tidak" id="Tidak"> <label for="Tidak">Tidak</label>
 									</td>
 								</tr>
 								<tr>
@@ -227,7 +228,7 @@
 									<td></td>
 									<td>:</td>
 									<td><input type="text" name="garansi">
-										<input type="radio" name="syarat" value="ada"> Dengan Syarat
+										<input type="radio" name="syarat" value="ada" id="Dengan Syarat"> <label for="Dengan Syarat">Dengan Syarat</label>
 									</td>
 								</tr>
 								<tr>
