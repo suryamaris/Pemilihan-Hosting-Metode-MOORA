@@ -1,3 +1,22 @@
+<style>
+	body {
+		background-color: #ddd;
+	}
+
+	table {
+		position: relative;
+		top: 60px;
+		left: 50px;
+		background-color: #eee;
+	}
+</style>
+
+<div class="position-relative">
+	<div class="position-absolute top-0 start-50 translate-middle-x">
+		<h2 style="text-decoration: underline; padding-left:50px;">Manipulasi Data</h2>
+	</div>
+</div>
+
 <table class="table" style="width: max-content; font-size:small;">
 	<form>
 		<!-- Heading Tabel -->
@@ -42,8 +61,8 @@
 				<td scope="row"><?php echo "Rp " . number_format($hosting['harga'], 0); ?></td>
 				<td scope="row" style="width: 100px;">
 					<table>
-						<tr><a href="<?= base_url('datahosting/edit_data/') . $hosting['id']; ?>"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
-						<tr><button class="btn btn-danger"><a href="<?= base_url('datahosting/delete_data/') . $hosting['id']; ?>">Hapus</button></a></tr>
+						<tr><a href="<?= base_url('datahosting/edit_data/') . $hosting['id']; ?>" style="color: white;"><button class="btn btn-info" style="width: 70px;">Edit</a></button></tr>
+						<tr><button class="btn btn-danger"><a href="<?= base_url('datahosting/delete_data/') . $hosting['id']; ?>" style="color: white;">Hapus</button></a></tr>
 					</table>
 				</td>
 
@@ -51,9 +70,9 @@
 		<?php } ?>
 	</form>
 </table>
-<!-- Pagination -->
-<?= $this->pagination->create_links(); ?>
 <!-- Button Tambah Data -->
-<div id="down">
+<div id="down" style="position: relative; padding-left:50px; top:50px;">
+	<!-- Pagination -->
+	<?= $this->pagination->create_links(); ?>
 	<a href="<?php echo base_url('datahosting/add_data'); ?>"><button class="btn btn-primary">Tambah</button></a></td>
 </div>
