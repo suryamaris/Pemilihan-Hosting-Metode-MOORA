@@ -45,7 +45,7 @@
 </div>
 
 <div class="masukan">
-    <form action="<?= base_url('start') ?>">
+    <form action="<?= base_url('datahosting/start') ?>" method="POST">
         <!-- Tentukan nilai prioritas -->
         <table>
             <tr>
@@ -121,7 +121,7 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select></td>
-                        <td><select name="bandwith">
+                        <td><select name="bandwidth">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

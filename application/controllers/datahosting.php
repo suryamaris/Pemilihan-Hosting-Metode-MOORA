@@ -2,6 +2,7 @@
 
 class dataHosting extends CI_Controller
 {
+	// Tampilan Home
 	public function index()
 	{
 
@@ -10,6 +11,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('home');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan Sistem
 	public function Sistem()
 	{
 
@@ -18,6 +21,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('sistem');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan Proses
 	public function Proses()
 	{
 
@@ -26,6 +31,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('proses');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan Help
 	public function Help()
 	{
 
@@ -34,6 +41,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('help');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan About
 	public function About()
 	{
 
@@ -42,6 +51,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('about');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan Tambah Data
 	public function add_data()
 	{
 		$judul['judul'] = 'Halaman Admin';
@@ -49,6 +60,8 @@ class dataHosting extends CI_Controller
 		$this->load->view('form_add');
 		$this->load->view('template/footer');
 	}
+
+	// Tampilan Menu Admin
 	public function admin()
 	{
 		$this->load->library('pagination');
@@ -95,6 +108,7 @@ class dataHosting extends CI_Controller
 		$this->load->view('data_hosting', $data);
 		$this->load->view('template/footer');
 	}
+	// Input Data Hosting 
 	public function Insert()
 	{
 		$this->load->view('form_add');
@@ -108,6 +122,7 @@ class dataHosting extends CI_Controller
 
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
+	// Hapus Data Hosting
 	public function delete_data($id)
 	{
 		$id = array('id' => $id);
@@ -118,12 +133,8 @@ class dataHosting extends CI_Controller
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
 
-	public function bobot()
-	{
-		$this->load->view('form_add');
-	}
 
-	// Edit
+	// Edit Data Hosting
 	public function edit_data($id)
 	{
 		$this->load->model('data_model');
@@ -152,6 +163,7 @@ class dataHosting extends CI_Controller
 		$this->load->view('form_edit', $data);
 		$this->load->view('template/footer');
 	}
+	// Update Database Hosting
 	public function update()
 	{
 		$this->load->view('form_edit');
@@ -171,6 +183,20 @@ class dataHosting extends CI_Controller
 		//kembali jika sudah update
 		if ($res > 0) {
 			redirect(base_url('datahosting/admin'), 'refresh');
+		}
+	}
+
+	// PROSES MENJALANKAN PROGRAM
+
+	public function start()
+	{
+		$this->load->view('sistem');
+		$this->load->model('proses');
+
+		$prioritas = $this->proses->Prioritas();
+		$res = $this->proses->Insert('prioritas', $prioritas);
+		if ($res > 0) {
+			redirect(base_url('datahosting/sistem'), 'refresh');
 		}
 	}
 }
