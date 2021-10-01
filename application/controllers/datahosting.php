@@ -192,9 +192,11 @@ class dataHosting extends CI_Controller
 	{
 		$this->load->view('sistem');
 		$this->load->model('proses');
-
+		// Tentukan Prioritas
 		$prioritas = $this->proses->Prioritas();
-		$res = $this->proses->Insert('prioritas', $prioritas);
+		$res = $this->proses->Update('prioritas', $prioritas, array('id' => 1));
+
+		$normalisasi = $this->proses->Normalisasi();
 		if ($res > 0) {
 			redirect(base_url('datahosting/sistem'), 'refresh');
 		}
