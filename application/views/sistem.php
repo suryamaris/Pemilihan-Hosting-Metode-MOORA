@@ -5,19 +5,14 @@
         padding-left: 55px;
     }
 
-    td {
-        width: 150px;
-    }
 
     h1 {
         position: absolute;
-        top: 240px;
+        top: 310px;
         left: 39%;
     }
 
-    tr {
-        height: 30px;
-    }
+
 
     .hosting {
         position: relative;
@@ -31,6 +26,16 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+
+
+    .web td {
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    .fitur td {
+        width: 150px;
+    }
 </style>
 
 <div class="position-relative">
@@ -41,81 +46,198 @@
 
 <div class="masukan">
     <form action="<?= base_url('start') ?>">
+        <!-- Tentukan nilai prioritas -->
         <table>
             <tr>
-                <td rowspan="2" style="width: 300px;" style="vertical-align: bottom;">
-                    <div class="mb-3" style="max-width: 250px;">
-                        <label for="Select" class="form-label" style="font-weight: bold;">Jenis Web</label>
-                        <select id="Select" class="form-select" style="height: 50px;">
-                            <option selected disabled>Pilih Jenis Web</option>
-                            <option value=""> pilihan lain</option>
-                        </select>
-                    </div>
-                </td>
-                <td>
-                    <div class="mb-3" style="max-width: 250px;">
-                        <label for="fitur" class="form-label" style="font-weight: bold;">Fitur</label>
-                        <br>
-                        <input class="form-check-input" type="radio" name="fitur" value="tidak ada" id="fitur">
-                        <label class="form-check-label" for="fitur">
-                            Tidak ada
-                        </label>
-                    </div>
-                </td>
-                <td><br>
-                    <input class="form-check-input" type="radio" name="fitur" id="wordpress">
-                    <label class="form-check-label" for="wordpress">
-                        Wordpress
-                    </label>
-                </td>
-                <td><br>
-                    <input class="form-check-input" type="radio" name="fitur" id="ssl">
-                    <label class="form-check-label" for="ssl">
-                        Free SSL
-                    </label>
-                </td>
-                <td><br>
-                    <input class="form-check-input" type="radio" name="fitur" id="litespeed">
-                    <label class="form-check-label" for="litespeed">
-                        Litespeed
-                    </label>
-                </td>
-                <td rowspan="2" style="vertical-align:middle;">
-                    <button type=" submit" class="btn btn-primary" style="height: 50px; width:200px">Cari</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="form-check-input" type="radio" name="fitur" id="backup">
-                    <label class="form-check-label" for="backup">
-                        Auto Backup
-                    </label>
-                </td>
-                <td>
-                    <input class="form-check-input" type="radio" name="fitur" id="domain">
-                    <label class="form-check-label" for="domain">
-                        Free Domain
-                    </label>
-                </td>
-                <td>
-                    <input class="form-check-input" type="radio" name="fitur" id="email">
-                    <label class="form-check-label" for="email">
-                        Email
-                    </label>
-                </td>
-                <td>
-                    <input class="form-check-input" type="radio" name="fitur" id="add">
-                    <label class="form-check-label" for="add">
-                        Addon Domain
-                    </label>
-                </td>
-            </tr>
+                <table class="web">
+                    <tr>
+                        <td colspan="3" style="text-align: left; text-decoration:underline"><b>Kebutuhan Web Hosting</b></td>
+                    </tr>
+                    <tr>
+                        <td>Kriteria</td>
+                        <td>Jenis</td>
+                        <td>Server</td>
+                        <td>SSD</td>
+                        <td>RAM</td>
+                        <td>CPU</td>
+                        <td>Uptime</td>
+                        <td>Keamanan</td>
+                        <td>Bandwidth</td>
+                        <td>Inodes</td>
+                        <td>Support</td>
+                        <td>Fitur</td>
+                        <td>Garansi</td>
+                        <td>harga</td>
+                    </tr>
+                    <tr>
+                        <td>NIlai</td>
 
+                        <td><select name="jenis">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="server">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="ssd">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="ram">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="cpu">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="uptime">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="keamanan">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="bandwith">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="inodes">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="support">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="fitur">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="garansi">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                        <td><select name="harga">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select></td>
+                    </tr>
+                </table>
+            </tr>
+            <!-- Tentukan fitur -->
+            <tr>
+                <table class="fitur" style="position:relative; top:20px;">
+                    <tr>
+                        <td colspan="3"><b><u>Pilihan Fitur Wajib</u></b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" value="tidak ada" id="fitur">
+                            <label class="form-check-label" for="fitur">
+                                Tidak ada
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="wordpress">
+                            <label class="form-check-label" for="wordpress">
+                                Wordpress
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="ssl">
+                            <label class="form-check-label" for="ssl">
+                                Free SSL
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="litespeed">
+                            <label class="form-check-label" for="litespeed">
+                                Litespeed
+                            </label>
+                        </td>
+                        <td rowspan="2" style="vertical-align:middle; padding-left:50px;">
+                            <button type=" submit" class="btn btn-primary" style="height: 50px; width:200px">Cari</button>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="backup">
+                            <label class="form-check-label" for="backup">
+                                Auto Backup
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="domain">
+                            <label class="form-check-label" for="domain">
+                                Free Domain
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="email">
+                            <label class="form-check-label" for="email">
+                                Email
+                            </label>
+                        </td>
+                        <td>
+                            <input class="form-check-input" type="radio" name="fitur" id="add">
+                            <label class="form-check-label" for="add">
+                                Addon Domain
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
         </table>
     </form>
 </div>
+
+<!-- Menampilkan hosting yang terpilih -->
 <h1>PILIHAN HOSTING</h1>
-<hr style="position: relative; top:50px;">
+<hr style="position: relative; top:70px;">
 <div class="hosting">
     <table>
         <td>

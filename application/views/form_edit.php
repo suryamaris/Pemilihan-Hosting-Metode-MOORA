@@ -1,3 +1,10 @@
+<style>
+	.card {
+		position: relative;
+		width: 650px;
+	}
+</style>
+
 <div class="container-fluid content-row">
 	<div class="row">
 		<div class="col-sm-12 col-lg-5">
@@ -36,6 +43,8 @@
 											<td><input type="radio" name="jenis" value="Shared" <?php if ($jenis == 'Shared') echo 'checked'; ?>> Shared
 											</td>
 											<td> <input type="radio" name="jenis" value="Semi Dedicated" <?php if ($jenis == 'Semi Dedicated') echo 'checked'; ?>> Semi Dedicated
+												<input type="radio" name="jenis" value="CLoud" <?php if ($jenis == 'CLoud') echo 'checked'; ?>> CLoud
+												<input type="radio" name="jenis" value="VPS" <?php if ($jenis == 'VPS') echo 'checked'; ?>> VPS
 												<input type="radio" name="jenis" value="Dedicated" <?php if ($jenis == 'Dedicated') echo 'checked'; ?>> Dedicated
 											</td>
 										</tr>
@@ -108,9 +117,9 @@
 		</div>
 		<div class="col-sm-12 col-lg-7">
 			<!-- Card -->
-			<div class="card mb-3" style="max-width: 700px; height : 520px;">
-				<div class="row" style="background-color:#eeeeee">
-					<div class="col-md">
+			<div class="card mb-3" style="width: 800px; height : 540px; position:relative;left:50px;">
+				<div class="row" style="background-color:#eeeeee; width: 800px; height : 540px; position:relative;left:10px;">
+					<div class=" col-md">
 						<div class="card-body">
 							<table>
 								<br>

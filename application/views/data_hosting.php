@@ -74,5 +74,5 @@
 <div id="down" style="position: relative; padding-left:50px; top:50px;">
 	<!-- Pagination -->
 	<?= $this->pagination->create_links(); ?>
-	<a href="<?php echo base_url('datahosting/add_data'); ?>"><button class="btn btn-primary">Tambah</button></a></td>
+	<a href="<?php echo base_url('datahosting/add_data'); ?>"><button class="btn btn-primary">Tambah Data Hosting</button></a></td>
 </div>

@@ -5,7 +5,7 @@
 			<div class="card mb-3" style="max-width: 700px; height:520px;background-color:#eeeeee">
 				<div class="row g-0" style="background-color:#eeeeee">
 					<div class="col-md">
-						<div class="card-body">
+						<div class="card-body" style="padding:0%;">
 							<h5 class="card-header" style="background-color: #eeeeee;">Tambah Data Hosting</h5>
 							<a href="<?php echo base_url('datahosting/admin') ?>"><button class="btn btn-info">Kembali</button></a>
 							<div class="card-body">
@@ -36,6 +36,8 @@
 											<td><input type="radio" name="jenis" value="Shared" id="Shared"> <label for="Shared">Shared</label>
 											</td>
 											<td> <input type="radio" name="jenis" value="Semi Dedicated" id="Semi Dedicated"> <label for="Semi Dedicated">Semi Dedicated</label>
+												<input type="radio" name="jenis" value="Cloud" id="Cloud"> <label for="Cloud">Cloud</label>
+												<input type="radio" name="jenis" value="Cloud" id="VPS"> <label for="VPS">VPS</label>
 												<input type="radio" name="jenis" value="Dedicated" id="Dedicated"> <label for="Dedicated">Dedicated</label>
 											</td>
 										</tr>
@@ -109,10 +111,10 @@
 		<div class="col-sm-12 col-lg-7">
 			<br>
 			<!-- Card -->
-			<div class="card mb-3" style="max-width: 700px; height : 520px;">
-				<div class="row" style="background-color:#eeeeee">
+			<div class="card mb-3" style="max-width: 800px; height : 520px; position:relative; top:-20px;">
+				<div class="row" style="background-color:#eeeeee; width:800px;position:relative ;left:12px;height:520px">
 					<div class="col-md">
-						<div class="card-body">
+						<div class="card-body" style="padding-left:25px; height:500px;">
 							<table>
 								<br>
 								<br>

@@ -83,13 +83,16 @@ class Data_model extends CI_Model
 		$inode = $this->input->post('inode');
 		if ($inode == '0')
 			$inode = 'Unlimited';
+		$server = $this->input->post('server');
+		if ($server == 'Bebas')
+			$server = 'Indonesia, Singapura, Eropa';
 
 		$data = array(
 			'id' => $this->input->post('id'),
 			'nama' => $this->input->post('nama'),
 			'penyedia' => $this->input->post('penyedia'),
 			'jenis' => $this->input->post('jenis'),
-			'server' => $this->input->post('server'),
+			'server' => $server,
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'),
 			'cpu' => $this->input->post('cpu'),
@@ -125,7 +128,9 @@ class Data_model extends CI_Model
 		if ($jenis == 'Shared')
 			$jenis = 1;
 		elseif ($jenis == 'Semi Dedicated')
-			$jenis = 3;
+			$jenis = 2;
+		elseif ($jenis == 'VPS')
+			$jenis = 4;
 		else
 			$jenis = 5;
 		$server = $this->input->post('server');
