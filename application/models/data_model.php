@@ -72,9 +72,9 @@ class Data_model extends CI_Model
 			$fitur += array('sub' => $this->input->post('sub') . ' Sub Domain');
 		$myFitur = implode(', ', $fitur);
 
-		$bandwith = $this->input->post('bandwidth');
-		if ($bandwith != 'Unlimited')
-			$bandwith = $bandwith;
+		$bandwidth = $this->input->post('bandwidth');
+		if ($bandwidth != 'Unlimited')
+			$bandwidth = $bandwidth;
 
 		$ssd = $this->input->post('ssd');
 		if ($ssd == '0')
@@ -96,7 +96,7 @@ class Data_model extends CI_Model
 			'uptime' => $this->input->post('uptime'),
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'),
 			'cpu' => $this->input->post('cpu'),
-			'bandwidth' => $bandwith,
+			'bandwidth' => $bandwidth,
 			'inode' => $inode,
 			'support' => $this->input->post('support'),
 			'fitur' => $myFitur,
@@ -115,9 +115,9 @@ class Data_model extends CI_Model
 		$inode = $this->input->post('inode');
 		if ($inode == 0)
 			$inode = 2000000;
-		$bandwith = $this->input->post('bandwith');
-		if ($bandwith == 0)
-			$bandwith = 1500;
+		$bandwidth = $this->input->post('bandwidth');
+		if ($bandwidth == 0)
+			$bandwidth = 1500;
 		$support = $this->input->post('support');
 		if ($support == 'Fast Support 24/7')
 			$support = 5;
@@ -148,7 +148,7 @@ class Data_model extends CI_Model
 			'server' => $server,
 			'keamanan' => $this->input->post('jumlah'),
 			'uptime' => $this->input->post('uptime'),
-			'ssd' => $ssd, 'ram' => $this->input->post('ram'), 'cpu' => $this->input->post('cpu'), 'bandwidth' => $bandwith, 'inode' => $inode, 'support' => $support, 'fitur' => $fitur, 'garansi' => $this->input->post('garansi'), 'harga' => $this->input->post('harga')
+			'ssd' => $ssd, 'ram' => $this->input->post('ram'), 'cpu' => $this->input->post('cpu'), 'bandwidth' => $bandwidth, 'inode' => $inode, 'support' => $support, 'fitur' => $fitur, 'garansi' => $this->input->post('garansi'), 'harga' => $this->input->post('harga')
 		);
 		return $dataNilai;
 	}

@@ -70,6 +70,7 @@ class dataHosting extends CI_Controller
 		$config['base_url'] = 'http://localhost/hosting/datahosting/admin';
 		$config['total_rows'] = $this->data_model->countAllHosting();
 		$config['per_page'] = 5;
+		$config['num_links'] = 5;
 		//Styling
 		$config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
 		$config['full_tag_close'] = '</ul></nav>';
@@ -196,7 +197,11 @@ class dataHosting extends CI_Controller
 		$prioritas = $this->proses->Prioritas();
 		$res = $this->proses->Update('prioritas', $prioritas, array('id' => 1));
 
-		$normalisasi = $this->proses->Normalisasi();
+		// normalisasi nanti dipindahkan ke bagian tambah data dan update data
+		// $normalisasi = $this->proses->Normalisasi();
+		$terbobot = $this->proses->Terbobot();
+		$preferensi = $this->proses->Preferensi();
+
 		if ($res > 0) {
 			redirect(base_url('datahosting/sistem'), 'refresh');
 		}
