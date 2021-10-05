@@ -14,7 +14,7 @@ class Proses extends CI_Model
         $res = $this->db->update($table, $data, $where);
         return $res;
     }
-
+    // Fungsi untuk menentukan nilai prioritas
     public function Prioritas()
     {
         $this->load->view('sistem');
@@ -27,7 +27,7 @@ class Proses extends CI_Model
             'uptime' => $this->input->post('uptime'),
             'keamanan' => $this->input->post('keamanan'),
             'bandwidth' => $this->input->post('bandwidth'),
-            'inodes' => $this->input->post('inodes'),
+            'inode' => $this->input->post('inode'),
             'support' => $this->input->post('support'),
             'fitur' => $this->input->post('fitur'),
             'garansi' => $this->input->post('garansi'),
@@ -48,7 +48,7 @@ class Proses extends CI_Model
             'uptime' => $kriteria['uptime'] / $total,
             'keamanan' => $kriteria['keamanan'] / $total,
             'bandwidth' => $kriteria['bandwidth'] / $total,
-            'inodes' => $kriteria['inodes'] / $total,
+            'inode' => $kriteria['inode'] / $total,
             'support' => $kriteria['support'] / $total,
             'fitur' => $kriteria['fitur'] / $total,
             'garansi' => $kriteria['garansi'] / $total,
@@ -57,7 +57,7 @@ class Proses extends CI_Model
 
         return ($prioritas);
     }
-
+    // Fungsi untuk menentukan nilai Normalisasi
     public function Normalisasi()
     {
         $nilai = $this->db->get('nilai')->result_array();
@@ -95,7 +95,7 @@ class Proses extends CI_Model
         }
 
 
-        // Tentukan nilai normalisasi kriteri = alternatif / akar dari total alternatif pangkat 2
+        // Tentukan nilai normalisasi kriteria = alternatif / akar dari total alternatif pangkat 2
         foreach ($nilai as $pangkat) {
             $normal = array(
                 'id' => $pangkat['id'],
@@ -114,8 +114,59 @@ class Proses extends CI_Model
                 'harga' => $pangkat['harga'] / sqrt($total['harga']),
             );
 
+            // $res = $this->db->Insert('normalisasi', $normal);
             $res = $this->db->update('normalisasi', $normal, array('id' => $pangkat['id']));
         }
         return (0);
+    }
+
+    // Menentukan nilai Normlisasi Terbobot
+    public function Terbobot()
+    {
+
+        $normalisasi = $this->db->get('normalisasi')->result_array();
+        $prioritas = $this->db->get('prioritas')->result_array();
+
+        $bobot = array(
+            'jenis' => 0,
+            'server' => 0,
+            'ssd' => 0,
+            'ram' => 0,
+            'cpu' => 0,
+            'uptime' => 0,
+            'keamanan' => 0,
+            'bandwidth' => 0,
+            'inode' => 0,
+            'support' => 0,
+            'fitur' => 0,
+            'garansi' => 0,
+            'harga' => 0
+        );
+
+        // Setiap kriteria pada setiap data hosting dikalikan dengan nilai prioritas / terbobot
+        foreach ($normalisasi as $normal) {
+            $bobot = array(
+                'id'    => $normal['id'],
+                'jenis' => $normal['jenis'] * $prioritas[0]['jenis'],
+                'server' => $normal['server'] * $prioritas[0]['server'],
+                'ssd' => $normal['ssd'] * $prioritas[0]['ssd'],
+                'ram' => $normal['ram'] * $prioritas[0]['ram'],
+                'cpu' => $normal['cpu'] * $prioritas[0]['cpu'],
+                'uptime' => $normal['uptime'] * $prioritas[0]['uptime'],
+                'keamanan' => $normal['keamanan'] * $prioritas[0]['keamanan'],
+                'bandwidth' => $normal['bandwidth'] * $prioritas[0]['bandwidth'],
+                'inode' => $normal['inode'] * $prioritas[0]['inode'],
+                'support' => $normal['support'] * $prioritas[0]['support'],
+                'fitur' => $normal['fitur'] * $prioritas[0]['fitur'],
+                'garansi' => $normal['garansi'] * $prioritas[0]['garansi'],
+                'harga' => $normal['harga'] * $prioritas[0]['harga']
+            );
+            $res = $this->db->update('terbobot', $bobot, array('id' => $bobot['id']));
+        }
+    }
+
+    public function Preferensi()
+    {
+        $terbobot = $this->db->get('terbobot')->result_array();
     }
 }
