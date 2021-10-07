@@ -17,7 +17,7 @@ class Proses extends CI_Model
     // Fungsi untuk menentukan nilai prioritas
     public function Prioritas()
     {
-        $this->load->view('sistem');
+
         $kriteria = array(
             'jenis' => $this->input->post('jenis'),
             'server' => $this->input->post('server'),

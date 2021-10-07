@@ -128,6 +128,9 @@ class dataHosting extends CI_Controller
 		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$dataNilai = $this->data_model->Insert('nilai', $dataNilai);
 		$dataFitur = $this->data_model->Insert('fitur', $dataFitur);
+		$idNormalisasi = $this->data_model->Insert('normalisasi', array('id' => $data['id']));
+		$idTerbobot = $this->data_model->Insert('terbobot', array('id' => $data['id']));
+		$idPreferensi = $this->data_model->Insert('preferensi', array('id' => $data['id']));
 
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
@@ -177,19 +180,26 @@ class dataHosting extends CI_Controller
 	{
 		$this->load->view('form_edit');
 		$this->load->model('data_model');
+
 		//Upadte Fitur
 		$dataFitur = $this->data_model->inputFitur();
 		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$whereFitur = array('id' => $this->input->post('id'));;
 		$dataFitur = $this->data_model->Update('fitur', $dataFitur, $whereFitur);
+
 		//Update nilai
 		$whereNilai = array('id' => $this->input->post('id'),);
 		$dataNilai = $this->data_model->Update('nilai', $dataNilai, $whereNilai);
+
 		//Upadte data
 		$data = $this->data_model->Input();
 		$where = array('id' => $this->input->post('id'));;
 		$res = $this->data_model->Update('list', $data, $where);
-		//kembali jika sudah update
+
+		//Update nilai normalisasi
+		$normalisasi = $this->proses->Normalisasi();
+
+		//kembali jika update berhasil
 		if ($res > 0) {
 			redirect(base_url('datahosting/admin'), 'refresh');
 		}
@@ -199,16 +209,16 @@ class dataHosting extends CI_Controller
 
 	public function start()
 	{
-		$this->load->view('sistem');
 		$this->load->model('proses');
 		// Tentukan Prioritas
 		$prioritas = $this->proses->Prioritas();
 		$res = $this->proses->Update('prioritas', $prioritas, array('id' => 1));
 
 		// normalisasi nanti dipindahkan ke bagian tambah data dan update data
-		// $normalisasi = $this->proses->Normalisasi();
+		//$normalisasi = $this->proses->Normalisasi();
 		$terbobot = $this->proses->Terbobot();
 		$preferensi = $this->proses->Preferensi();
+
 
 		if ($res) {
 			redirect(base_url('datahosting/sistem'), 'refresh');

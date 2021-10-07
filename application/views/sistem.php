@@ -291,7 +291,8 @@
                                         </tr>
                                         <tr>
                                             <td><b>Inodes </b></td>
-                                            <td> <?= $hosting['inode']; ?></td>
+                                            <td> <?php if ($hosting['inode'] != 'Unlimited') echo (number_format($hosting['inode']));
+                                                    else echo ($hosting['inode']); ?></td>
                                         </tr>
                                         <tr>
                                             <td><b>Bandwidth </b></td>
@@ -323,7 +324,7 @@
                 </tr> <?php } ?>
 
         <?php $i++;
-        }  ?>
+        } ?>
     </table>
 
 </div>
