@@ -163,10 +163,19 @@ class Proses extends CI_Model
             );
             $res = $this->db->update('terbobot', $bobot, array('id' => $bobot['id']));
         }
+        return (0);
     }
 
     public function Preferensi()
     {
         $terbobot = $this->db->get('terbobot')->result_array();
+
+        foreach ($terbobot as $data) {
+            $id = $data['id'];
+            $nilai = ($data['jenis'] + $data['server'] + $data['ssd'] + $data['ram'] + $data['cpu'] + $data['uptime'] + $data['keamanan'] + $data['bandwidth'] + $data['inode'] + $data['support'] + $data['fitur'] + $data['garansi']) - $data['harga'];
+            $preferensi = array('id' => $id, 'nilai' => $nilai);
+            $res = $this->db->update('preferensi', $preferensi, array('id' => $id));;
+        }
+        return (0);
     }
 }

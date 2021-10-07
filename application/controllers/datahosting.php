@@ -15,10 +15,18 @@ class dataHosting extends CI_Controller
 	// Tampilan Sistem
 	public function Sistem()
 	{
+		$data = $this->db->select('*')
+			->from('list')
+			->join('preferensi', 'list.id=preferensi.id', 'left')
+			->order_by('nilai', 'DESC')
+			->limit(8)
+			->get();
+		$data = array('data' => $data);
+
 
 		$judul['judul'] = 'My Hosting';
 		$this->load->view('template/head', $judul);
-		$this->load->view('sistem');
+		$this->load->view('sistem', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -202,7 +210,7 @@ class dataHosting extends CI_Controller
 		$terbobot = $this->proses->Terbobot();
 		$preferensi = $this->proses->Preferensi();
 
-		if ($res > 0) {
+		if ($res) {
 			redirect(base_url('datahosting/sistem'), 'refresh');
 		}
 	}

@@ -25,8 +25,14 @@
         border: 5px white;
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 10px;
+        vertical-align: top;
     }
 
+    .card-body tr {
+        padding-top: 0px;
+
+    }
 
     .web td {
         padding-right: 20px;
@@ -240,45 +246,84 @@
 <hr style="position: relative; top:70px;">
 <div class="hosting">
     <table>
-        <td>
-            <div class="card" style="width: 20rem;">
-                <div class="card-img-top" style="min-height: 250px;">
-                    <div class="card-head" style="height: 100px; background-color:#ddd"></div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td>
-            <div class="card" style="width: 20rem;">
-                <div class="card-img-top" style="min-height: 250px;">
-                    <div class="card-head" style="height: 100px; background-color:#ddd"></div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td>
-            <div class="card" style="width: 20rem;">
-                <div class="card-img-top" style="min-height: 250px;">
-                    <div class="card-head" style="height: 100px; background-color:#ddd"></div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td>
-            <div class="card" style="width: 20rem;">
-                <div class="card-img-top" style="min-height: 250px;">
-                    <div class="card-head" style="height: 100px; background-color:#ddd"></div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </td>
+        <?php $i = 0;
+        foreach ($data->result_array() as $hosting) {
+        ?>
+
+            <?php if ($i == 0 || $i == 4) { ?> <tr> <?php } ?>
+
+                <?php if ($i < 8) { ?>
+
+                    <td>
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-img-top" style="min-height: 250px;">
+                                <div class="card-head" style="height: 100px; background-color:#ddd">
+                                    <h3 style="text-align: center;"><u><?= $hosting['nama']; ?></u>
+                                        <br><br>Rp <?= number_format($hosting['harga']); ?>
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <table>
+                                        <tr>
+                                            <td><b>Penyedia </b></td>
+                                            <td> <?= $hosting['penyedia']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Jenis </b></td>
+                                            <td> <?= $hosting['jenis']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Lokasi </b></td>
+                                            <td> <?= $hosting['server']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Penyimpanan </b></td>
+                                            <td> <?= $hosting['ssd'];
+                                                    if ($hosting['ssd'] != 'Unlimited') echo ('GB'); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Ram </b></td>
+                                            <td> <?= $hosting['ram']; ?> GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Cpu </b></td>
+                                            <td> <?= $hosting['cpu']; ?> Core</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Inodes </b></td>
+                                            <td> <?= $hosting['inode']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Bandwidth </b></td>
+                                            <td> <?= $hosting['bandwidth']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Keamanan </b></td>
+                                            <td style="word-wrap:break-word;"> <?= $hosting['keamanan']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Fitur </b></td>
+                                            <td style="word-wrap:break-word;"> <?= $hosting['fitur']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Uptime </b></td>
+                                            <td> <?= $hosting['uptime']; ?> %</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Garansi </b></td>
+                                            <td> <?= $hosting['garansi']; ?> Hari</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                <?php } ?>
+                <?php if ($i == 3 || $i == 7) { ?>
+                </tr> <?php } ?>
+
+        <?php $i++;
+        }  ?>
     </table>
+
 </div>
