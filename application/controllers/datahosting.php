@@ -33,10 +33,51 @@ class dataHosting extends CI_Controller
 	// Tampilan Proses
 	public function Proses()
 	{
-
+		$data = $this->db->select('*')
+			->from('list')
+			->join('nilai', 'list.id=nilai.id', 'left')
+			->get();
+		$data = array('data' => $data);
 		$judul['judul'] = 'My Hosting';
 		$this->load->view('template/head', $judul);
-		$this->load->view('proses');
+		$this->load->view('proses/alternatif', $data);
+		$this->load->view('template/footer');
+	}
+	public function Normalisasi()
+	{
+		$data = $this->db->select('*')
+			->from('list')
+			->join('normalisasi', 'list.id=normalisasi.id', 'left')
+			->get();
+		$data = array('data' => $data);
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('proses/normalisasi', $data);
+		$this->load->view('template/footer');
+	}
+	public function Terbobot()
+	{
+		$data = $this->db->select('*')
+			->from('list')
+			->join('terbobot', 'list.id=terbobot.id', 'left')
+			->get();
+		$data = array('data' => $data);
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('proses/terbobot', $data);
+		$this->load->view('template/footer');
+	}
+	public function Perangkingan()
+	{
+		$data = $this->db->select('*')
+			->from('list')
+			->join('preferensi', 'list.id=preferensi.id', 'left')
+			->order_by('nilai', 'DESC')
+			->get();
+		$data = array('data' => $data);
+		$judul['judul'] = 'My Hosting';
+		$this->load->view('template/head', $judul);
+		$this->load->view('proses/perangkingan', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -204,6 +245,8 @@ class dataHosting extends CI_Controller
 			redirect(base_url('datahosting/admin'), 'refresh');
 		}
 	}
+
+
 
 	// PROSES MENJALANKAN PROGRAM
 

@@ -17,16 +17,13 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo base_url(); ?>">Home</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link" href="<?php echo base_url('datahosting/sistem'); ?>">Sistem</a>
-					<a class="nav-link" href="<?php echo base_url('datahosting/proses'); ?>">Proses</a>
-					<a class="nav-link" href="<?php echo base_url('datahosting/admin'); ?>">Admin</a>
-					<a class="nav-link" href="<?php echo base_url('datahosting/help'); ?>">Help</a>
-					<a class="nav-link" href="<?php echo base_url('datahosting/about'); ?>">About</a>
+					<a class="navbar-brand" href="<?php echo base_url('datahosting/sistem'); ?>">Sistem</a>
+					<a class="navbar-brand" href="<?php echo base_url('datahosting/proses'); ?>">Proses</a>
+					<a class="navbar-brand" href="<?php echo base_url('datahosting/admin'); ?>">Admin</a>
+					<a class="navbar-brand" href="<?php echo base_url('datahosting/help'); ?>">Help</a>
+					<a class="navbar-brand" href="<?php echo base_url('datahosting/about'); ?>">About</a>
 				</div>
 			</div>
 		</div>
