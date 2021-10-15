@@ -43,7 +43,7 @@
 											<td><input type="radio" name="jenis" value="Shared" <?php if ($jenis == 'Shared') echo 'checked'; ?>> Shared
 											</td>
 											<td> <input type="radio" name="jenis" value="Semi Dedicated" <?php if ($jenis == 'Semi Dedicated') echo 'checked'; ?>> Semi Dedicated
-												<input type="radio" name="jenis" value="CLoud" <?php if ($jenis == 'CLoud') echo 'checked'; ?>> CLoud
+												<input type="radio" name="jenis" value="CLoud" <?php if ($jenis == 'Cloud') echo 'checked'; ?>> Cloud
 												<input type="radio" name="jenis" value="VPS" <?php if ($jenis == 'VPS') echo 'checked'; ?>> VPS
 												<input type="radio" name="jenis" value="Dedicated" <?php if ($jenis == 'Dedicated') echo 'checked'; ?>> Dedicated
 											</td>

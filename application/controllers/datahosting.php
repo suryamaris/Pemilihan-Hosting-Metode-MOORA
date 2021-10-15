@@ -250,7 +250,7 @@ class dataHosting extends CI_Controller
 		$res = $this->data_model->Update('list', $data, $where);
 
 		//Update nilai normalisasi
-		$normalisasi = $this->proses->Normalisasi();
+		$normalisasi = $this->data_model->Normalisasi();
 
 		//kembali jika update berhasil
 		if ($res > 0) {
