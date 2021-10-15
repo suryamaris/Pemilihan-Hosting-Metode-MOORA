@@ -38,7 +38,6 @@ class Proses extends CI_Model
         foreach ($kriteria as $bobot) {
             $total += $bobot;
         }
-
         $prioritas = array(
             'jenis' => $kriteria['jenis'] / $total,
             'server' => $kriteria['server'] / $total,
@@ -58,67 +57,7 @@ class Proses extends CI_Model
         return ($prioritas);
     }
     // Fungsi untuk menentukan nilai Normalisasi
-    public function Normalisasi()
-    {
-        $nilai = $this->db->get('nilai')->result_array();
 
-        // Tentukan alternatif pangkat 2
-        $total = array(
-            'jenis' => 0,
-            'server' => 0,
-            'ssd' => 0,
-            'ram' => 0,
-            'cpu' => 0,
-            'uptime' => 0,
-            'keamanan' => 0,
-            'bandwidth' => 0,
-            'inode' => 0,
-            'support' => 0,
-            'fitur' => 0,
-            'garansi' => 0,
-            'harga' => 0
-        );
-        foreach ($nilai as $data) {
-            $total['jenis'] += pow($data['jenis'], 2);
-            $total['server'] += pow($data['server'], 2);
-            $total['ssd'] += pow($data['ssd'], 2);
-            $total['ram'] += pow($data['ram'], 2);
-            $total['cpu'] += pow($data['cpu'], 2);
-            $total['uptime'] += pow($data['uptime'], 2);
-            $total['keamanan'] += pow($data['keamanan'], 2);
-            $total['bandwidth'] += pow($data['bandwidth'], 2);
-            $total['inode'] += pow($data['inode'], 2);
-            $total['support'] += pow($data['support'], 2);
-            $total['fitur'] += pow($data['fitur'], 2);
-            $total['garansi'] += pow($data['garansi'], 2);
-            $total['harga'] += pow($data['harga'], 2);
-        }
-
-
-        // Tentukan nilai normalisasi kriteria = alternatif / akar dari total alternatif pangkat 2
-        foreach ($nilai as $pangkat) {
-            $normal = array(
-                'id' => $pangkat['id'],
-                'jenis' => $pangkat['jenis'] / sqrt($total['jenis']),
-                'server' => $pangkat['server'] / sqrt($total['server']),
-                'ssd' => $pangkat['ssd'] / sqrt($total['ssd']),
-                'ram' => $pangkat['ram'] / sqrt($total['ram']),
-                'cpu' => $pangkat['cpu'] / sqrt($total['cpu']),
-                'uptime' => $pangkat['uptime'] / sqrt($total['uptime']),
-                'keamanan' => $pangkat['keamanan'] / sqrt($total['keamanan']),
-                'bandwidth' => $pangkat['bandwidth'] / sqrt($total['bandwidth']),
-                'inode' => $pangkat['inode'] / sqrt($total['inode']),
-                'support' => $pangkat['support'] / sqrt($total['support']),
-                'fitur' => $pangkat['fitur'] / sqrt($total['fitur']),
-                'garansi' => $pangkat['garansi'] / sqrt($total['garansi']),
-                'harga' => $pangkat['harga'] / sqrt($total['harga']),
-            );
-
-            // $res = $this->db->Insert('normalisasi', $normal);
-            $res = $this->db->update('normalisasi', $normal, array('id' => $pangkat['id']));
-        }
-        return (0);
-    }
 
     // Menentukan nilai Normlisasi Terbobot
     public function Terbobot()

@@ -1,23 +1,29 @@
 <style>
+    .atas {
+
+        background-color: #EDEDD5;
+        min-height: 265px;
+    }
+
     .masukan {
         position: relative;
-        top: 50px;
+        top: 10px;
         padding-left: 55px;
     }
 
 
     h1 {
-        position: absolute;
-        top: 310px;
-        left: 39%;
+        text-align: center;
+        color: black;
     }
 
 
 
     .hosting {
         position: relative;
-        top: 140px;
+        top: 0px;
         padding-left: 35px;
+        background-color: #EEE;
     }
 
     .hosting td,
@@ -43,135 +49,135 @@
         width: 150px;
     }
 </style>
+<div class="atas">
+    <h2 style="text-decoration: underline; text-align:center">PENGGUNAAN SISTEM</h2>
+    <div class="masukan">
+        <form action="<?= base_url('datahosting/start') ?>" method="POST">
+            <!-- Tentukan nilai prioritas -->
+            <table>
+                <tr>
+                    <table class="web">
+                        <tr>
+                            <td colspan="3" style="text-align: left; text-decoration:underline"><b>Kebutuhan Web Hosting</b></td>
+                        </tr>
+                        <tr>
+                            <td>Kriteria</td>
+                            <td>Jenis</td>
+                            <td>Server</td>
+                            <td>SSD</td>
+                            <td>RAM</td>
+                            <td>CPU</td>
+                            <td>Uptime</td>
+                            <td>Keamanan</td>
+                            <td>Bandwidth</td>
+                            <td>Inodes</td>
+                            <td>Support</td>
+                            <td>Fitur</td>
+                            <td>Garansi</td>
+                            <td>harga</td>
+                        </tr>
+                        <tr>
+                            <td>NIlai</td>
 
-<div class="position-relative">
-    <div class="position-absolute top-0 start-50 translate-middle-x">
-        <h2 style="text-decoration: underline;">PENGGUNAAN SISTEM</h2>
-    </div>
-</div>
-
-<div class="masukan">
-    <form action="<?= base_url('datahosting/start') ?>" method="POST">
-        <!-- Tentukan nilai prioritas -->
-        <table>
-            <tr>
-                <table class="web">
-                    <tr>
-                        <td colspan="3" style="text-align: left; text-decoration:underline"><b>Kebutuhan Web Hosting</b></td>
-                    </tr>
-                    <tr>
-                        <td>Kriteria</td>
-                        <td>Jenis</td>
-                        <td>Server</td>
-                        <td>SSD</td>
-                        <td>RAM</td>
-                        <td>CPU</td>
-                        <td>Uptime</td>
-                        <td>Keamanan</td>
-                        <td>Bandwidth</td>
-                        <td>Inodes</td>
-                        <td>Support</td>
-                        <td>Fitur</td>
-                        <td>Garansi</td>
-                        <td>harga</td>
-                    </tr>
-                    <tr>
-                        <td>NIlai</td>
-
-                        <td><select name="jenis">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="server">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="ssd">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="ram">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="cpu">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="uptime">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="keamanan">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="bandwidth">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="inode">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="support">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="fitur">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="garansi">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                        <td><select name="harga">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                    </tr>
-                </table>
-            </tr>
+                            <td><select name="jenis">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="server">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="ssd">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="ram">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="cpu">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="uptime">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="keamanan">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="bandwidth">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="inode">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="support">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="fitur">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="garansi">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td><select name="harga">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            <td style="vertical-align:middle; padding-left:50px;">
+                                <button type=" submit" class="btn btn-primary" style="height: 50px; width:200px">Cari</button>
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
+        </form>
+        <form action="<?= base_url('datahosting/sistem') ?>" method="POST">
             <!-- Tentukan fitur -->
             <tr>
                 <table class="fitur" style="position:relative; top:20px;">
@@ -180,56 +186,56 @@
                     </tr>
                     <tr>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" value="tidak ada" id="fitur">
-                            <label class="form-check-label" for="fitur">
+                            <input class="form-check-input" type="radio" name="fitur" value="tidak ada" id="tidak">
+                            <label class="form-check-label" for="tidak">
                                 Tidak ada
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="wordpress">
+                            <input class="form-check-input" type="radio" name="fitur" id="wordpress" value="wordpress">
                             <label class="form-check-label" for="wordpress">
                                 Wordpress
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="ssl">
-                            <label class="form-check-label" for="ssl">
+                            <input class="form-check-input" type="radio" name="fitur" id="freessl" value="freessl">
+                            <label class="form-check-label" for="freessl">
                                 Free SSL
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="litespeed">
+                            <input class="form-check-input" type="radio" name="fitur" id="litespeed" value="litespeed">
                             <label class="form-check-label" for="litespeed">
                                 Litespeed
                             </label>
                         </td>
-                        <td rowspan="2" style="vertical-align:middle; padding-left:50px;">
-                            <button type=" submit" class="btn btn-primary" style="height: 50px; width:200px">Cari</button>
+                        <td rowspan="2" style="vertical-align:middle; padding-left:418px;">
+                            <button type=" submit" class="btn btn-warning" style="height: 50px; width:200px">Filter</button>
                         </td>
 
 
                     </tr>
                     <tr>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="backup">
-                            <label class="form-check-label" for="backup">
+                            <input class="form-check-input" type="radio" name="fitur" id="auto" value="auto">
+                            <label class="form-check-label" for="auto">
                                 Auto Backup
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="domain">
+                            <input class="form-check-input" type="radio" name="fitur" id="domain" value="domain">
                             <label class="form-check-label" for="domain">
                                 Free Domain
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="email">
+                            <input class="form-check-input" type="radio" name="fitur" id="email" value="email">
                             <label class="form-check-label" for="email">
                                 Email
                             </label>
                         </td>
                         <td>
-                            <input class="form-check-input" type="radio" name="fitur" id="add">
+                            <input class="form-check-input" type="radio" name="fitur" id="add" value="add">
                             <label class="form-check-label" for="add">
                                 Addon Domain
                             </label>
@@ -237,14 +243,18 @@
                     </tr>
                 </table>
             </tr>
-        </table>
-    </form>
+            </table>
+        </form>
+    </div>
 </div>
 
 <!-- Menampilkan hosting yang terpilih -->
-<h1>PILIHAN HOSTING</h1>
-<hr style="position: relative; top:70px;">
 <div class="hosting">
+    <br>
+    <h1>PILIHAN HOSTING
+        <hr>
+    </h1>
+
     <table>
         <?php $i = 0;
         foreach ($data->result_array() as $hosting) {
@@ -257,7 +267,7 @@
                     <td>
                         <div class="card" style="width: 20rem;">
                             <div class="card-img-top" style="min-height: 250px;">
-                                <div class="card-head" style="height: 100px; background-color:#ddd">
+                                <div class="card-head" style="height: 100px; background-color:#D5E4ED">
                                     <h3 style="text-align: center;"><u><?= $hosting['nama']; ?></u>
                                         <br><br>Rp <?= number_format($hosting['harga']); ?>
                                     </h3>

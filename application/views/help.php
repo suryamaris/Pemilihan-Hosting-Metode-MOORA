@@ -42,7 +42,7 @@
         <th rowspan="4">Sistem</th>
         <!-- Isi bagian sistem -->
         <td>
-            <p><b>Jenis Website</b> => Memilih jenis website yang diinginkan </p>
+            <p><b>Kebutuhan Web Hosting</b> => Menentukan bobot setiap kriteria hosting sesuai kebutuhan </p>
         </td>
     </tr>
     <tr>

@@ -15,10 +15,20 @@ class dataHosting extends CI_Controller
 	// Tampilan Sistem
 	public function Sistem()
 	{
+		$fitur2 = $this->input->post('fitur');
+		if ($fitur2 != 'tidak ada')
+			$fitur1 = $fitur2;
+		else
+			$fitur1 = 'fitur.id';
+		if ($fitur2 === null)
+			$fitur1 = 'fitur.id';
+
 		$data = $this->db->select('*')
 			->from('list')
 			->join('preferensi', 'list.id=preferensi.id', 'left')
-			->order_by('nilai', 'DESC')
+			->join('fitur', 'list.id=fitur.id', 'left')
+			->where($fitur1 . ' <> "tidak" ')
+			->order_by('preferensi.nilai', 'DESC')
 			->limit(8)
 			->get();
 		$data = array('data' => $data);
@@ -165,13 +175,15 @@ class dataHosting extends CI_Controller
 		$this->load->model('data_model');
 		$dataFitur = $this->data_model->inputFitur();
 		$data = $this->data_model->Input();
+		$id = $data;
 		$data = $this->data_model->Insert('list', $data);
 		$dataNilai = $this->data_model->inputNilai($dataFitur['nilai']);
 		$dataNilai = $this->data_model->Insert('nilai', $dataNilai);
 		$dataFitur = $this->data_model->Insert('fitur', $dataFitur);
-		$idNormalisasi = $this->data_model->Insert('normalisasi', array('id' => $data['id']));
-		$idTerbobot = $this->data_model->Insert('terbobot', array('id' => $data['id']));
-		$idPreferensi = $this->data_model->Insert('preferensi', array('id' => $data['id']));
+		$idNormalisasi = $this->data_model->Insert('normalisasi', array('id' => $id['id']));
+		$idTerbobot = $this->data_model->Insert('terbobot', array('id' => $id['id']));
+		$idPreferensi = $this->data_model->Insert('preferensi', array('id' => $id['id']));
+		$normalisasi = $this->data_model->Normalisasi();
 
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
