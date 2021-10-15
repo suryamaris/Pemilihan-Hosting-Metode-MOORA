@@ -29,7 +29,7 @@ class dataHosting extends CI_Controller
 			->join('fitur', 'list.id=fitur.id', 'left')
 			->where($fitur1 . ' <> "tidak" ')
 			->order_by('preferensi.nilai', 'DESC')
-			->limit(8)
+			->limit(16)
 			->get();
 		$data = array('data' => $data);
 
@@ -195,6 +195,9 @@ class dataHosting extends CI_Controller
 		$this->data_model->Delete('list', $id);
 		$this->data_model->Delete('nilai', $id);
 		$this->data_model->Delete('fitur', $id);
+		$this->data_model->Delete('normalisasi', $id);
+		$this->data_model->Delete('terbobot', $id);
+		$this->data_model->Delete('preferensi', $id);
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
 

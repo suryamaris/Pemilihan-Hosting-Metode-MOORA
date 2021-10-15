@@ -260,77 +260,77 @@
         foreach ($data->result_array() as $hosting) {
         ?>
 
-            <?php if ($i == 0 || $i == 4) { ?> <tr> <?php } ?>
+            <?php if ($i == 0 || fmod($i, 4) == 0) { ?> <tr> <?php } ?>
 
-                <?php if ($i < 8) { ?>
 
-                    <td>
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-img-top" style="min-height: 250px;">
-                                <div class="card-head" style="height: 100px; background-color:#D5E4ED">
-                                    <h3 style="text-align: center;"><u><?= $hosting['nama']; ?></u>
-                                        <br><br>Rp <?= number_format($hosting['harga']); ?>
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <table>
-                                        <tr>
-                                            <td><b>Penyedia </b></td>
-                                            <td> <?= $hosting['penyedia']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Jenis </b></td>
-                                            <td> <?= $hosting['jenis']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Lokasi </b></td>
-                                            <td> <?= $hosting['server']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Penyimpanan </b></td>
-                                            <td> <?= $hosting['ssd'];
-                                                    if ($hosting['ssd'] != 'Unlimited') echo ('GB'); ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Ram </b></td>
-                                            <td> <?= $hosting['ram']; ?> GB</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Cpu </b></td>
-                                            <td> <?= $hosting['cpu']; ?> Core</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Inodes </b></td>
-                                            <td> <?php if ($hosting['inode'] != 'Unlimited') echo (number_format($hosting['inode']));
-                                                    else echo ($hosting['inode']); ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Bandwidth </b></td>
-                                            <td> <?= $hosting['bandwidth']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Keamanan </b></td>
-                                            <td style="word-wrap:break-word;"> <?= $hosting['keamanan']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Fitur </b></td>
-                                            <td style="word-wrap:break-word;"> <?= $hosting['fitur']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Uptime </b></td>
-                                            <td> <?= $hosting['uptime']; ?> %</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Garansi </b></td>
-                                            <td> <?= $hosting['garansi']; ?> Hari</td>
-                                        </tr>
-                                    </table>
-                                </div>
+
+                <td>
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-img-top" style="min-height: 250px;">
+                            <div class="card-head" style="height: 100px; background-color:#D5E4ED">
+                                <h3 style="text-align: center;"><u><?= $hosting['nama']; ?></u>
+                                    <br><br><b style="color:crimson;"> Rp <?= number_format($hosting['harga']); ?></b>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td><b>Penyedia </b></td>
+                                        <td style="color: coral;"> <b><?= $hosting['penyedia']; ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Jenis </b></td>
+                                        <td> <?= $hosting['jenis']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Lokasi </b></td>
+                                        <td> <?= $hosting['server']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Penyimpanan </b></td>
+                                        <td> <?= $hosting['ssd'];
+                                                if ($hosting['ssd'] != 'Unlimited') echo ('GB'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Ram </b></td>
+                                        <td> <?= $hosting['ram']; ?> GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Cpu </b></td>
+                                        <td> <?= $hosting['cpu']; ?> Core</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Inodes </b></td>
+                                        <td> <?php if ($hosting['inode'] != 'Unlimited') echo (number_format($hosting['inode']));
+                                                else echo ($hosting['inode']); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Bandwidth </b></td>
+                                        <td> <?= $hosting['bandwidth']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Keamanan </b></td>
+                                        <td style="word-wrap:break-word;"> <?= $hosting['keamanan']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Fitur </b></td>
+                                        <td style="word-wrap:break-word;"> <?= $hosting['fitur']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Uptime </b></td>
+                                        <td> <?= $hosting['uptime']; ?> %</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Garansi </b></td>
+                                        <td> <?= $hosting['garansi']; ?> Hari</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                    </td>
-                <?php } ?>
-                <?php if ($i == 3 || $i == 7) { ?>
+                    </div>
+                </td>
+
+                <?php if (fmod($i, 4) == 3) { ?>
                 </tr> <?php } ?>
 
         <?php $i++;

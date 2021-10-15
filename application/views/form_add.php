@@ -48,7 +48,7 @@
 											</td>
 											<td> <input type="radio" name="server" value="Singapore" id="Singapore"> <label for="Singapore">Singapore</label>
 												<input type="radio" name="server" value="Eropa" id="Eropa"> <label for="Eropa">Eropa</label>
-												<input type="radio" name="server" value="Bebas" id="Bebas"> <label for="Bebas">Bebas</label>
+												<input type="radio" name="server" value="Pilih indonesia, Singapore, Eropa" id="Bebas"> <label for="Bebas">Bebas</label>
 											</td>
 										</tr>
 										<tr>

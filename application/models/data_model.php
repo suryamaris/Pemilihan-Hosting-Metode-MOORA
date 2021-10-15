@@ -110,13 +110,13 @@ class Data_model extends CI_Model
 	public function inputNilai($fitur)
 	{
 		$ssd = $this->input->post('ssd');
-		if ($ssd == 0)
-			$ssd = 10;
+		if ($ssd == 'Unlimited')
+			$ssd = 300;
 		$inode = $this->input->post('inode');
-		if ($inode == 0)
+		if ($inode == 'Unlimited')
 			$inode = 2000000;
 		$bandwidth = $this->input->post('bandwidth');
-		if ($bandwidth == 0)
+		if ($bandwidth == 'Unlimited')
 			$bandwidth = 10000;
 		$support = $this->input->post('support');
 		if ($support == 'Fast Support 24/7')
@@ -130,7 +130,7 @@ class Data_model extends CI_Model
 		elseif ($jenis == 'Semi Dedicated')
 			$jenis = 2;
 		elseif ($jenis == 'VPS')
-			$jenis = 4;
+			$jenis = 3;
 		else
 			$jenis = 5;
 		$server = $this->input->post('server');
