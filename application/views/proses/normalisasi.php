@@ -31,7 +31,7 @@
 <div class="tab">
     <div class="btn-group" role="group" aria-label="Basic outlined example">
         <a href='<?= base_url('datahosting/proses') ?>'> <button type="button" class="btn btn-outline-primary">Alternatif</button></a>
-        <a href='<?= base_url('datahosting/normalisasi') ?>'><button type="button" class="btn btn-outline-primary">Normalisasi Kriteria</button></a>
+        <a class="nav-link active" aria-current="page" href='<?= base_url('datahosting/normalisasi') ?>'><button type="button" class="btn btn-outline-primary">Normalisasi Kriteria</button></a>
         <a href='<?= base_url('datahosting/terbobot') ?>'><button type="button" class="btn btn-outline-primary">Normalisasi Terbobot</button></a>
         <a href='<?= base_url('datahosting/perangkingan') ?>'><button type="button" class="btn btn-outline-primary">Perangkingan</button></a>
     </div>

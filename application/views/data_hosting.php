@@ -6,7 +6,8 @@
 	table {
 		position: relative;
 		top: 60px;
-		left: 50px;
+		margin-right: auto;
+		margin-left: auto;
 		background-color: #eee;
 	}
 </style>
@@ -47,7 +48,7 @@
 				<td scope="row"><?php echo $hosting['nama']; ?></td>
 				<td scope="row"><?php echo $hosting['penyedia']; ?></td>
 				<td scope="row"><?php echo $hosting['jenis']; ?></td>
-				<td scope="row"><?php echo $hosting['server']; ?></td>
+				<td scope="row" style="word-wrap: break-word; width:80px" ;><?php echo $hosting['server']; ?></td>
 				<td scope="row"><?php echo $hosting['ssd']; ?> <?php if ($hosting['ssd'] != 'Unlimited') echo (' GB');  ?></td>
 				<td scope="row"><?php echo $hosting['ram']; ?> GB</td>
 				<td scope="row"><?php echo $hosting['cpu']; ?> core</td>
@@ -75,4 +76,5 @@
 	<!-- Pagination -->
 	<?= $this->pagination->create_links(); ?>
 	<a href="<?php echo base_url('datahosting/add_data'); ?>"><button class="btn btn-primary">Tambah Data Hosting</button></a></td>
+	<a href="<?php echo base_url('datahosting/refreshNormalisasi'); ?>" style="position:absolute; right:50px"><button class="btn btn-success">Refresh Nilai Normalisasi</button></a></td>
 </div>

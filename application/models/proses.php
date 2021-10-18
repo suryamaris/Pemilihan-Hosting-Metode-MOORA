@@ -111,7 +111,19 @@ class Proses extends CI_Model
 
         foreach ($terbobot as $data) {
             $id = $data['id'];
-            $nilai = ($data['jenis'] + $data['server'] + $data['ssd'] + $data['ram'] + $data['cpu'] + $data['uptime'] + $data['keamanan'] + $data['bandwidth'] + $data['inode'] + $data['support'] + $data['fitur'] + $data['garansi']) - $data['harga'];
+            $nilai = ($data['jenis'] +
+                $data['server'] +
+                $data['ssd'] +
+                $data['ram'] +
+                $data['cpu'] +
+                $data['uptime'] +
+                $data['keamanan'] +
+                $data['bandwidth'] +
+                $data['inode'] +
+                $data['support'] +
+                $data['fitur'] +
+                $data['garansi']) -
+                $data['harga'];
             $preferensi = array('id' => $id, 'nilai' => $nilai);
             $res = $this->db->update('preferensi', $preferensi, array('id' => $id));;
         }

@@ -46,6 +46,7 @@ class dataHosting extends CI_Controller
 		$data = $this->db->select('*')
 			->from('list')
 			->join('nilai', 'list.id=nilai.id', 'left')
+			->order_by('list.penyedia', 'ASC')
 			->get();
 		$data = array('data' => $data);
 		$judul['judul'] = 'My Hosting';
@@ -58,6 +59,7 @@ class dataHosting extends CI_Controller
 		$data = $this->db->select('*')
 			->from('list')
 			->join('normalisasi', 'list.id=normalisasi.id', 'left')
+			->order_by('list.penyedia', 'ASC')
 			->get();
 		$data = array('data' => $data);
 		$judul['judul'] = 'My Hosting';
@@ -70,6 +72,7 @@ class dataHosting extends CI_Controller
 		$data = $this->db->select('*')
 			->from('list')
 			->join('terbobot', 'list.id=terbobot.id', 'left')
+			->order_by('list.penyedia', 'ASC')
 			->get();
 		$data = array('data' => $data);
 		$judul['judul'] = 'My Hosting';
@@ -183,7 +186,7 @@ class dataHosting extends CI_Controller
 		$idNormalisasi = $this->data_model->Insert('normalisasi', array('id' => $id['id']));
 		$idTerbobot = $this->data_model->Insert('terbobot', array('id' => $id['id']));
 		$idPreferensi = $this->data_model->Insert('preferensi', array('id' => $id['id']));
-		$normalisasi = $this->data_model->Normalisasi();
+
 
 		redirect(base_url('datahosting/admin'), 'refresh');
 	}
@@ -252,11 +255,19 @@ class dataHosting extends CI_Controller
 		$where = array('id' => $this->input->post('id'));;
 		$res = $this->data_model->Update('list', $data, $where);
 
-		//Update nilai normalisasi
-		$normalisasi = $this->data_model->Normalisasi();
+
 
 		//kembali jika update berhasil
 		if ($res > 0) {
+			redirect(base_url('datahosting/admin'), 'refresh');
+		}
+	}
+
+	public function refreshNormalisasi()
+	{
+		$this->load->model('data_model');
+		$normalisasi = $this->data_model->Normalisasi();
+		if ($normalisasi > 0) {
 			redirect(base_url('datahosting/admin'), 'refresh');
 		}
 	}

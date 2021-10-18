@@ -46,7 +46,7 @@
     }
 
     .fitur td {
-        width: 150px;
+        min-width: 150px;
     }
 </style>
 <div class="atas">
@@ -64,7 +64,7 @@
                             <td>Kriteria</td>
                             <td>Jenis</td>
                             <td>Server</td>
-                            <td>SSD</td>
+                            <td>Storage</td>
                             <td>RAM</td>
                             <td>CPU</td>
                             <td>Uptime</td>
@@ -170,7 +170,7 @@
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select></td>
-                            <td style="vertical-align:middle; padding-left:50px;">
+                            <td style="position:absolute; right: 100px;">
                                 <button type=" submit" class="btn btn-primary" style="height: 50px; width:200px">Cari</button>
                             </td>
                         </tr>
@@ -209,7 +209,8 @@
                                 Litespeed
                             </label>
                         </td>
-                        <td rowspan="2" style="vertical-align:middle; padding-left:418px;">
+                        <td></td>
+                        <td rowspan="2" style="position:absolute; right: -575px;">
                             <button type=" submit" class="btn btn-warning" style="height: 50px; width:200px">Filter</button>
                         </td>
 
@@ -268,6 +269,8 @@
                     <div class="card" style="width: 20rem;">
                         <div class="card-img-top" style="min-height: 250px;">
                             <div class="card-head" style="height: 100px; background-color:#D5E4ED">
+
+
                                 <h3 style="text-align: center;"><u><?= $hosting['nama']; ?></u>
                                     <br><br><b style="color:crimson;"> Rp <?= number_format($hosting['harga']); ?></b>
                                 </h3>

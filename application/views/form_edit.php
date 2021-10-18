@@ -55,7 +55,7 @@
 											</td>
 											<td> <input type="radio" name="server" value="Singapore" <?php if ($server == 'Singapore') echo 'checked'; ?>> Singapore
 												<input type="radio" name="server" value="Eropa" <?php if ($server == 'Eropa') echo 'checked'; ?>> Eropa
-												<input type="radio" name="server" value="Bebas" <?php if ($server == 'Bebas') echo 'checked'; ?>> Bebas
+												<input type="radio" name="server" value="Indonesia, Singapore, Eropa" <?php if ($server == 'Indonesia, Singapore, Eropa') echo 'checked'; ?>> Bebas
 											</td>
 										</tr>
 										<tr>

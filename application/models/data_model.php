@@ -111,7 +111,7 @@ class Data_model extends CI_Model
 	{
 		$ssd = $this->input->post('ssd');
 		if ($ssd == 'Unlimited')
-			$ssd = 300;
+			$ssd = 1280;
 		$inode = $this->input->post('inode');
 		if ($inode == 'Unlimited')
 			$inode = 2000000;
@@ -142,12 +142,20 @@ class Data_model extends CI_Model
 			$server = 4;
 		else
 			$server = 5;
+
+		$uptime = $this->input->post('uptime');
+		if ($uptime <= 99)
+			$uptime = 1;
+		elseif ($uptime <= 99.9)
+			$uptime = 3;
+		else
+			$uptime = 5;
 		$dataNilai = array(
 			'id' => $this->input->post('id'),
 			'jenis' => $jenis,
 			'server' => $server,
 			'keamanan' => $this->input->post('jumlah'),
-			'uptime' => $this->input->post('uptime'),
+			'uptime' => $uptime,
 			'ssd' => $ssd, 'ram' => $this->input->post('ram'), 'cpu' => $this->input->post('cpu'), 'bandwidth' => $bandwidth, 'inode' => $inode, 'support' => $support, 'fitur' => $fitur, 'garansi' => $this->input->post('garansi'), 'harga' => $this->input->post('harga')
 		);
 		return $dataNilai;
@@ -300,9 +308,8 @@ class Data_model extends CI_Model
 				'harga' => $pangkat['harga'] / sqrt($total['harga']),
 			);
 
-			// $res = $this->db->Insert('normalisasi', $normal);
 			$res = $this->db->update('normalisasi', $normal, array('id' => $pangkat['id']));
 		}
-		return (0);
+		return (1);
 	}
 }
