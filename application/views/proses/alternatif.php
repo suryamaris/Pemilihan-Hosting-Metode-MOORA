@@ -2,7 +2,7 @@
     .tab {
         position: relative;
         top: 50px;
-        left: 50px;
+        padding-left: 50px;
     }
 
     .data {

@@ -147,7 +147,7 @@
 									<td>:<input type="radio" name="wordpress" value="ya" <?php if ($wordpress == "Wordpress") {
 																								echo "checked";
 																							} ?>> Ya
-										<input type="radio" name="wordpress" value="optimal" <?php if ($wordpress == "optimal") {
+										<input type="radio" name="wordpress" value="optimal" <?php if ($wordpress == "Optimal") {
 																									echo "checked";
 																								} ?>> Optimal
 										<input type="radio" name="wordpress" value="tidak" <?php if ($wordpress == "tidak") {

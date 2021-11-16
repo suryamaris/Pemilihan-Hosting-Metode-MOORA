@@ -2,11 +2,11 @@
     .tab {
         position: relative;
         top: 50px;
-        left: 50px;
+        padding-left: 50px;
     }
 
     .data {
-        width: 1400px;
+        width: 1430px;
         min-height: 700px;
         position: relative;
         top: 50px;
@@ -21,6 +21,10 @@
         margin-left: auto;
         margin-right: auto;
 
+    }
+
+    .data td {
+        word-wrap: break-word;
     }
 </style>
 

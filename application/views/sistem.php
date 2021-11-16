@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     .atas {
 
@@ -47,6 +48,10 @@
 
     .fitur td {
         min-width: 150px;
+    }
+
+    #tutup {
+        color: black;
     }
 </style>
 <div class="atas">
@@ -255,7 +260,6 @@
     <h1>PILIHAN HOSTING
         <hr>
     </h1>
-
     <table>
         <?php $i = 0;
         foreach ($data->result_array() as $hosting) {
@@ -339,5 +343,4 @@
         <?php $i++;
         } ?>
     </table>
-
 </div>
